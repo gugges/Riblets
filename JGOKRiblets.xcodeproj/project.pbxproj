@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		172F34A11F245AFF00B9A21E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34A01F245AFF00B9A21E /* AppDelegate.swift */; };
+		172F34A81F245AFF00B9A21E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172F34A71F245AFF00B9A21E /* Assets.xcassets */; };
+		172F34AB1F245AFF00B9A21E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172F34A91F245AFF00B9A21E /* LaunchScreen.storyboard */; };
+		172F34B61F245AFF00B9A21E /* JGOKRibletsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34B51F245AFF00B9A21E /* JGOKRibletsTests.swift */; };
+		172F34C11F245AFF00B9A21E /* JGOKRibletsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34C01F245AFF00B9A21E /* JGOKRibletsUITests.swift */; };
+		172F34D01F245B1E00B9A21E /* OKRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34CF1F245B1E00B9A21E /* OKRouter.swift */; };
+		172F34D21F245B3E00B9A21E /* OKInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34D11F245B3E00B9A21E /* OKInteractor.swift */; };
+		172F34D41F245B4800B9A21E /* OKBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34D31F245B4800B9A21E /* OKBuilder.swift */; };
+		172F34D61F245B6600B9A21E /* OKPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34D51F245B6600B9A21E /* OKPresenter.swift */; };
+		172F34D91F245BF500B9A21E /* OKHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34D81F245BF500B9A21E /* OKHashable.swift */; };
+		172F34DD1F24628600B9A21E /* OKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34DC1F24628600B9A21E /* OKViewController.swift */; };
+		172F34E31F246DE100B9A21E /* OKSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34E21F246DE100B9A21E /* OKSearchViewController.swift */; };
+		172F34E51F246DF600B9A21E /* OKSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34E41F246DF600B9A21E /* OKSearchPresenter.swift */; };
+		172F34E71F246E0A00B9A21E /* OKSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34E61F246E0A00B9A21E /* OKSearchInteractor.swift */; };
+		172F34E91F246E2500B9A21E /* OKSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34E81F246E2500B9A21E /* OKSearchRouter.swift */; };
+		172F34EB1F246E3400B9A21E /* OKSearchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34EA1F246E3400B9A21E /* OKSearchBuilder.swift */; };
+		172F34EE1F24742A00B9A21E /* OKRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34ED1F24742A00B9A21E /* OKRootBuilder.swift */; };
+		172F34F01F24744100B9A21E /* OKRootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34EF1F24744100B9A21E /* OKRootInteractor.swift */; };
+		172F34F21F2474CA00B9A21E /* OKRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34F11F2474CA00B9A21E /* OKRootRouter.swift */; };
+		172F34F61F25B22300B9A21E /* OKLaunchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F34F51F25B22300B9A21E /* OKLaunchBuilder.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		172F34B21F245AFF00B9A21E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 172F34951F245AFF00B9A21E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 172F349C1F245AFF00B9A21E;
+			remoteInfo = JGOKRiblets;
+		};
+		172F34BD1F245AFF00B9A21E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 172F34951F245AFF00B9A21E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 172F349C1F245AFF00B9A21E;
+			remoteInfo = JGOKRiblets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		172F349D1F245AFF00B9A21E /* JGOKRiblets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JGOKRiblets.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		172F34A01F245AFF00B9A21E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		172F34A71F245AFF00B9A21E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		172F34AA1F245AFF00B9A21E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		172F34AC1F245AFF00B9A21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		172F34B11F245AFF00B9A21E /* JGOKRibletsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JGOKRibletsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		172F34B51F245AFF00B9A21E /* JGOKRibletsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGOKRibletsTests.swift; sourceTree = "<group>"; };
+		172F34B71F245AFF00B9A21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		172F34BC1F245AFF00B9A21E /* JGOKRibletsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JGOKRibletsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		172F34C01F245AFF00B9A21E /* JGOKRibletsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGOKRibletsUITests.swift; sourceTree = "<group>"; };
+		172F34C21F245AFF00B9A21E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		172F34CF1F245B1E00B9A21E /* OKRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKRouter.swift; sourceTree = "<group>"; };
+		172F34D11F245B3E00B9A21E /* OKInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKInteractor.swift; sourceTree = "<group>"; };
+		172F34D31F245B4800B9A21E /* OKBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKBuilder.swift; sourceTree = "<group>"; };
+		172F34D51F245B6600B9A21E /* OKPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKPresenter.swift; sourceTree = "<group>"; };
+		172F34D81F245BF500B9A21E /* OKHashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKHashable.swift; sourceTree = "<group>"; };
+		172F34DC1F24628600B9A21E /* OKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKViewController.swift; sourceTree = "<group>"; };
+		172F34E21F246DE100B9A21E /* OKSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKSearchViewController.swift; sourceTree = "<group>"; };
+		172F34E41F246DF600B9A21E /* OKSearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKSearchPresenter.swift; sourceTree = "<group>"; };
+		172F34E61F246E0A00B9A21E /* OKSearchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKSearchInteractor.swift; sourceTree = "<group>"; };
+		172F34E81F246E2500B9A21E /* OKSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKSearchRouter.swift; sourceTree = "<group>"; };
+		172F34EA1F246E3400B9A21E /* OKSearchBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKSearchBuilder.swift; sourceTree = "<group>"; };
+		172F34ED1F24742A00B9A21E /* OKRootBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKRootBuilder.swift; sourceTree = "<group>"; };
+		172F34EF1F24744100B9A21E /* OKRootInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKRootInteractor.swift; sourceTree = "<group>"; };
+		172F34F11F2474CA00B9A21E /* OKRootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKRootRouter.swift; sourceTree = "<group>"; };
+		172F34F51F25B22300B9A21E /* OKLaunchBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKLaunchBuilder.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		172F349A1F245AFF00B9A21E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172F34AE1F245AFF00B9A21E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172F34B91F245AFF00B9A21E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		172F34941F245AFF00B9A21E = {
+			isa = PBXGroup;
+			children = (
+				172F349F1F245AFF00B9A21E /* JGOKRiblets */,
+				172F34B41F245AFF00B9A21E /* JGOKRibletsTests */,
+				172F34BF1F245AFF00B9A21E /* JGOKRibletsUITests */,
+				172F349E1F245AFF00B9A21E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		172F349E1F245AFF00B9A21E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				172F349D1F245AFF00B9A21E /* JGOKRiblets.app */,
+				172F34B11F245AFF00B9A21E /* JGOKRibletsTests.xctest */,
+				172F34BC1F245AFF00B9A21E /* JGOKRibletsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		172F349F1F245AFF00B9A21E /* JGOKRiblets */ = {
+			isa = PBXGroup;
+			children = (
+				172F34A01F245AFF00B9A21E /* AppDelegate.swift */,
+				172F34D71F245BE300B9A21E /* Common */,
+				172F34EC1F24741100B9A21E /* Root */,
+				172F34F41F25B1F700B9A21E /* Launch */,
+				172F34E11F246D8E00B9A21E /* Search */,
+				172F34A71F245AFF00B9A21E /* Assets.xcassets */,
+				172F34A91F245AFF00B9A21E /* LaunchScreen.storyboard */,
+				172F34AC1F245AFF00B9A21E /* Info.plist */,
+			);
+			path = JGOKRiblets;
+			sourceTree = "<group>";
+		};
+		172F34B41F245AFF00B9A21E /* JGOKRibletsTests */ = {
+			isa = PBXGroup;
+			children = (
+				172F34B51F245AFF00B9A21E /* JGOKRibletsTests.swift */,
+				172F34B71F245AFF00B9A21E /* Info.plist */,
+			);
+			path = JGOKRibletsTests;
+			sourceTree = "<group>";
+		};
+		172F34BF1F245AFF00B9A21E /* JGOKRibletsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				172F34C01F245AFF00B9A21E /* JGOKRibletsUITests.swift */,
+				172F34C21F245AFF00B9A21E /* Info.plist */,
+			);
+			path = JGOKRibletsUITests;
+			sourceTree = "<group>";
+		};
+		172F34CE1F245B0900B9A21E /* Riblet */ = {
+			isa = PBXGroup;
+			children = (
+				172F34CF1F245B1E00B9A21E /* OKRouter.swift */,
+				172F34D11F245B3E00B9A21E /* OKInteractor.swift */,
+				172F34D31F245B4800B9A21E /* OKBuilder.swift */,
+				172F34D51F245B6600B9A21E /* OKPresenter.swift */,
+				172F34DC1F24628600B9A21E /* OKViewController.swift */,
+			);
+			name = Riblet;
+			sourceTree = "<group>";
+		};
+		172F34D71F245BE300B9A21E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				172F34D81F245BF500B9A21E /* OKHashable.swift */,
+				172F34CE1F245B0900B9A21E /* Riblet */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		172F34E11F246D8E00B9A21E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				172F34E81F246E2500B9A21E /* OKSearchRouter.swift */,
+				172F34E61F246E0A00B9A21E /* OKSearchInteractor.swift */,
+				172F34EA1F246E3400B9A21E /* OKSearchBuilder.swift */,
+				172F34E41F246DF600B9A21E /* OKSearchPresenter.swift */,
+				172F34E21F246DE100B9A21E /* OKSearchViewController.swift */,
+				172F34F31F2474E400B9A21E /* Search View Routers */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		172F34EC1F24741100B9A21E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				172F34F11F2474CA00B9A21E /* OKRootRouter.swift */,
+				172F34EF1F24744100B9A21E /* OKRootInteractor.swift */,
+				172F34ED1F24742A00B9A21E /* OKRootBuilder.swift */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		172F34F31F2474E400B9A21E /* Search View Routers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Search View Routers";
+			sourceTree = "<group>";
+		};
+		172F34F41F25B1F700B9A21E /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				172F34F51F25B22300B9A21E /* OKLaunchBuilder.swift */,
+			);
+			name = Launch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		172F349C1F245AFF00B9A21E /* JGOKRiblets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 172F34C51F245AFF00B9A21E /* Build configuration list for PBXNativeTarget "JGOKRiblets" */;
+			buildPhases = (
+				172F34991F245AFF00B9A21E /* Sources */,
+				172F349A1F245AFF00B9A21E /* Frameworks */,
+				172F349B1F245AFF00B9A21E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JGOKRiblets;
+			productName = JGOKRiblets;
+			productReference = 172F349D1F245AFF00B9A21E /* JGOKRiblets.app */;
+			productType = "com.apple.product-type.application";
+		};
+		172F34B01F245AFF00B9A21E /* JGOKRibletsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 172F34C81F245AFF00B9A21E /* Build configuration list for PBXNativeTarget "JGOKRibletsTests" */;
+			buildPhases = (
+				172F34AD1F245AFF00B9A21E /* Sources */,
+				172F34AE1F245AFF00B9A21E /* Frameworks */,
+				172F34AF1F245AFF00B9A21E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				172F34B31F245AFF00B9A21E /* PBXTargetDependency */,
+			);
+			name = JGOKRibletsTests;
+			productName = JGOKRibletsTests;
+			productReference = 172F34B11F245AFF00B9A21E /* JGOKRibletsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		172F34BB1F245AFF00B9A21E /* JGOKRibletsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 172F34CB1F245AFF00B9A21E /* Build configuration list for PBXNativeTarget "JGOKRibletsUITests" */;
+			buildPhases = (
+				172F34B81F245AFF00B9A21E /* Sources */,
+				172F34B91F245AFF00B9A21E /* Frameworks */,
+				172F34BA1F245AFF00B9A21E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				172F34BE1F245AFF00B9A21E /* PBXTargetDependency */,
+			);
+			name = JGOKRibletsUITests;
+			productName = JGOKRibletsUITests;
+			productReference = 172F34BC1F245AFF00B9A21E /* JGOKRibletsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		172F34951F245AFF00B9A21E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = OkCupid;
+				TargetAttributes = {
+					172F349C1F245AFF00B9A21E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 886ZPWDXTP;
+						ProvisioningStyle = Automatic;
+					};
+					172F34B01F245AFF00B9A21E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 886ZPWDXTP;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 172F349C1F245AFF00B9A21E;
+					};
+					172F34BB1F245AFF00B9A21E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 886ZPWDXTP;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 172F349C1F245AFF00B9A21E;
+					};
+				};
+			};
+			buildConfigurationList = 172F34981F245AFF00B9A21E /* Build configuration list for PBXProject "JGOKRiblets" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 172F34941F245AFF00B9A21E;
+			productRefGroup = 172F349E1F245AFF00B9A21E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				172F349C1F245AFF00B9A21E /* JGOKRiblets */,
+				172F34B01F245AFF00B9A21E /* JGOKRibletsTests */,
+				172F34BB1F245AFF00B9A21E /* JGOKRibletsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		172F349B1F245AFF00B9A21E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172F34AB1F245AFF00B9A21E /* LaunchScreen.storyboard in Resources */,
+				172F34A81F245AFF00B9A21E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172F34AF1F245AFF00B9A21E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172F34BA1F245AFF00B9A21E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		172F34991F245AFF00B9A21E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172F34EB1F246E3400B9A21E /* OKSearchBuilder.swift in Sources */,
+				172F34E71F246E0A00B9A21E /* OKSearchInteractor.swift in Sources */,
+				172F34D41F245B4800B9A21E /* OKBuilder.swift in Sources */,
+				172F34DD1F24628600B9A21E /* OKViewController.swift in Sources */,
+				172F34EE1F24742A00B9A21E /* OKRootBuilder.swift in Sources */,
+				172F34F01F24744100B9A21E /* OKRootInteractor.swift in Sources */,
+				172F34E31F246DE100B9A21E /* OKSearchViewController.swift in Sources */,
+				172F34A11F245AFF00B9A21E /* AppDelegate.swift in Sources */,
+				172F34D91F245BF500B9A21E /* OKHashable.swift in Sources */,
+				172F34D21F245B3E00B9A21E /* OKInteractor.swift in Sources */,
+				172F34E91F246E2500B9A21E /* OKSearchRouter.swift in Sources */,
+				172F34F21F2474CA00B9A21E /* OKRootRouter.swift in Sources */,
+				172F34F61F25B22300B9A21E /* OKLaunchBuilder.swift in Sources */,
+				172F34D61F245B6600B9A21E /* OKPresenter.swift in Sources */,
+				172F34E51F246DF600B9A21E /* OKSearchPresenter.swift in Sources */,
+				172F34D01F245B1E00B9A21E /* OKRouter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172F34AD1F245AFF00B9A21E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172F34B61F245AFF00B9A21E /* JGOKRibletsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172F34B81F245AFF00B9A21E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172F34C11F245AFF00B9A21E /* JGOKRibletsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		172F34B31F245AFF00B9A21E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 172F349C1F245AFF00B9A21E /* JGOKRiblets */;
+			targetProxy = 172F34B21F245AFF00B9A21E /* PBXContainerItemProxy */;
+		};
+		172F34BE1F245AFF00B9A21E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 172F349C1F245AFF00B9A21E /* JGOKRiblets */;
+			targetProxy = 172F34BD1F245AFF00B9A21E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		172F34A91F245AFF00B9A21E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				172F34AA1F245AFF00B9A21E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		172F34C31F245AFF00B9A21E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		172F34C41F245AFF00B9A21E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		172F34C61F245AFF00B9A21E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 886ZPWDXTP;
+				INFOPLIST_FILE = JGOKRiblets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okcupid.www.JGOKRiblets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		172F34C71F245AFF00B9A21E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 886ZPWDXTP;
+				INFOPLIST_FILE = JGOKRiblets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okcupid.www.JGOKRiblets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		172F34C91F245AFF00B9A21E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 886ZPWDXTP;
+				INFOPLIST_FILE = JGOKRibletsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okcupid.www.JGOKRibletsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JGOKRiblets.app/JGOKRiblets";
+			};
+			name = Debug;
+		};
+		172F34CA1F245AFF00B9A21E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 886ZPWDXTP;
+				INFOPLIST_FILE = JGOKRibletsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okcupid.www.JGOKRibletsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JGOKRiblets.app/JGOKRiblets";
+			};
+			name = Release;
+		};
+		172F34CC1F245AFF00B9A21E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 886ZPWDXTP;
+				INFOPLIST_FILE = JGOKRibletsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okcupid.www.JGOKRibletsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = JGOKRiblets;
+			};
+			name = Debug;
+		};
+		172F34CD1F245AFF00B9A21E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 886ZPWDXTP;
+				INFOPLIST_FILE = JGOKRibletsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.okcupid.www.JGOKRibletsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = JGOKRiblets;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		172F34981F245AFF00B9A21E /* Build configuration list for PBXProject "JGOKRiblets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172F34C31F245AFF00B9A21E /* Debug */,
+				172F34C41F245AFF00B9A21E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		172F34C51F245AFF00B9A21E /* Build configuration list for PBXNativeTarget "JGOKRiblets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172F34C61F245AFF00B9A21E /* Debug */,
+				172F34C71F245AFF00B9A21E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		172F34C81F245AFF00B9A21E /* Build configuration list for PBXNativeTarget "JGOKRibletsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172F34C91F245AFF00B9A21E /* Debug */,
+				172F34CA1F245AFF00B9A21E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		172F34CB1F245AFF00B9A21E /* Build configuration list for PBXNativeTarget "JGOKRibletsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172F34CC1F245AFF00B9A21E /* Debug */,
+				172F34CD1F245AFF00B9A21E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 172F34951F245AFF00B9A21E /* Project object */;
+}
