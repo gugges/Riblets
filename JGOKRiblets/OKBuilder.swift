@@ -8,17 +8,7 @@
 
 import UIKit
 
-class OKBuilder {
-    
-    class func build() -> OKRouter {
-        let viewController = OKViewController()
-        let presenter = OKPresenter(viewController: viewController)
-        let interactor = OKInteractor(presenter: presenter)
-        
-        viewController.presenter = presenter
-        presenter.interactor = interactor
-        
-        return OKRouter(interactor: interactor)
-    }
-    
+protocol OKBuilder {
+    associatedtype T
+    static func build() -> T
 }

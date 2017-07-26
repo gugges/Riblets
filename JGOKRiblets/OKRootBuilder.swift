@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class OKRootBuilder: OKBuilder {
+struct OKRootBuilder: OKBuilder {
 
-    override class func build() -> OKRootRouter {
+    static func build() -> OKRootRouter {
         return OKRootRouter(interactor: OKRootInteractor(presenter: nil))
     }
     

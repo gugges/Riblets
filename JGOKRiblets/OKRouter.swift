@@ -6,28 +6,56 @@
 //  Copyright © 2017 OkCupid. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol OKRouterDelegate: class {
+    func present(viewController: UIViewController, animated: Bool)
+}
 
 class OKRouter: OKHashable {
     
+    weak var parent: OKRouter?
+    weak var delegate: OKRouterDelegate?
+    
     let interactor: OKInteractor
-    var childRouters = Set<OKRouter>()
+    lazy var childRouters = Set<OKRouter>()
     
     init(interactor: OKInteractor) {
         self.interactor = interactor
+        super.init()
+        interactor.delegate = self
     }
     
     func attach(childRouter: OKRouter) {
+        childRouter.parent = self
         childRouters.insert(childRouter)
     }
     
-    func removeRouter<T>(type: T.Type) -> OKRouter? where T: OKRouter {
+    func removeRouter(type: OKRouter.Type) -> OKRouter? {
         for router in childRouters {
-            if router === type  {
+            if type(of: router) == type  {
                 return childRouters.remove(router)
             }
         }
         return nil
+    }
+    
+}
+
+//MARK: - OKInteractorDelegate
+
+extension OKRouter: OKInteractorDelegate {
+    
+    func dismiss(routerType: OKRouter.Type) {
+        _ = removeRouter(type: routerType)
+    }
+    
+    func present(router: OKRouter) {
+        attach(childRouter: router)
+        
+        if let viewController = router.interactor.presenter?.viewController {
+            delegate?.present(viewController: viewController, animated: true)
+        }
     }
     
 }

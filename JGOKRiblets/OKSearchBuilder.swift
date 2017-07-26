@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class OKSearchBuilder: OKBuilder {
+struct OKSearchBuilder: OKBuilder {
     
-    override class func build() -> OKSearchRouter {
+    static func build() -> OKSearchRouter {
         let viewController = OKSearchViewController()
         let presenter = OKSearchPresenter(viewController: viewController)
         let interactor = OKSearchInteractor(presenter: presenter)

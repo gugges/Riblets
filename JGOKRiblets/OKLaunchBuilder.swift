@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class OKLaunchBuilder: OKBuilder {
+struct OKLaunchBuilder: OKBuilder {
 
-    override class func build() -> OKRouter {
+    static func build() -> OKRouter {
         let viewController = UIViewController()
         viewController.view.backgroundColor = .lightGray
         return OKRouter(interactor: OKInteractor(presenter: OKPresenter(viewController: viewController)))

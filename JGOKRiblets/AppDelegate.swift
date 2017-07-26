@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 
-extension AppDelegate: OKRootRouterDelegate {
+extension AppDelegate: OKRouterDelegate {
     
     func present(viewController: UIViewController, animated: Bool) {
         guard let currentViewController = window?.rootViewController, animated else {

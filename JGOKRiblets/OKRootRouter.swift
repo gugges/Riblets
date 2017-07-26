@@ -8,18 +8,7 @@
 
 import UIKit
 
-protocol OKRootRouterDelegate: class {
-    func present(viewController: UIViewController, animated: Bool)
-}
-
 final class OKRootRouter: OKRouter {
-    
-    override init(interactor: OKInteractor) {
-        super.init(interactor: interactor)
-        interactor.delegate = self
-    }
-
-    weak var delegate: OKRootRouterDelegate?
     
     //MARK: - Helpers
     
@@ -39,24 +28,6 @@ extension OKRootRouter: OKAppDelegate {
     
     func application(continue userActivity: NSUserActivity) -> Bool {
         return rootInteractor()?.application(continue: userActivity) ?? false
-    }
-    
-}
-
-//MARK: - OKInteractorDelegate
-
-extension OKRootRouter: OKInteractorDelegate {
-    
-    func dismiss(routerType: OKRouter.Type) {
-        _ = removeRouter(type: routerType)
-    }
-    
-    func present(router: OKRouter) {        
-        attach(childRouter: router)
-        
-        if let viewController = router.interactor.presenter?.viewController {
-            delegate?.present(viewController: viewController, animated: true)
-        }
     }
     
 }
