@@ -8,6 +8,14 @@
 
 import UIKit
 
+@objc protocol OKViewControllerDelegate: class {
+    @objc optional func viewDidLoad()
+    @objc optional func viewWillAppear()
+    @objc optional func viewDidAppear()
+    @objc optional func viewWillDisappear()
+    @objc optional func viewDidDisappear()
+}
+
 class OKViewController: UIViewController {
 
     weak var presenter: OKPresenter?

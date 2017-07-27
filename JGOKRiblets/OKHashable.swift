@@ -10,7 +10,7 @@ import Foundation
 
 class OKHashable {}
 
-// MARK: - Hashable
+//MARK: - Hashable
 
 extension OKHashable: Hashable {
     
@@ -19,9 +19,11 @@ extension OKHashable: Hashable {
     }
 }
 
-// MARK: - Equatable
+//MARK: - Equatable
 
-extension OKHashable: Equatable {}
-func ==(lhs: OKHashable, rhs: OKHashable) -> Bool {
-    return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+extension OKHashable: Equatable {
+    
+    static func ==(lhs: OKHashable, rhs: OKHashable) -> Bool {
+        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    }
 }

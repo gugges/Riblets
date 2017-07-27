@@ -1,5 +1,5 @@
 //
-//  OKSearchRouter.swift
+//  OKMatchSearchRouter.swift
 //  JGOKRiblets
 //
 //  Created by Jordan Guggenheim on 7/23/17.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-final class OKSearchRouter: OKRouter {
+final class OKMatchSearchRouter: OKRouter {
 
 }

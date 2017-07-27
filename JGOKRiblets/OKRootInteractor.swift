@@ -47,7 +47,7 @@ final class OKRootInteractor: OKInteractor {
             router = OKLaunchBuilder.build()
             
         case .loggedIn:
-            router = OKSearchBuilder.build()
+            router = OKMatchSearchBuilder.build()
         }
         
         currentContext = (state: state, type: type(of: router))

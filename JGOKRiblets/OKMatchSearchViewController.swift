@@ -8,18 +8,19 @@
 
 import UIKit
 
-protocol OKSearchViewDelegate: class {
+protocol OKMatchSearchViewDelegate: OKViewControllerDelegate {
     func navigationButtonTapped(at index: Int)
     func tappedItem(at indexPath: IndexPath)
 }
 
-final class OKSearchViewController: OKViewController {
+final class OKMatchSearchViewController: OKViewController {
     
-    weak var delegate: OKSearchViewDelegate?
+    weak var delegate: OKMatchSearchViewDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        delegate?.viewDidLoad?()
     }
 
 }
