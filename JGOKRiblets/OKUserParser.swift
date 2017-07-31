@@ -10,8 +10,8 @@ import Foundation
 
 struct OKUserParser: OKParser {
     
-    private let photoParser: OKPhotoParser
-    private let locationParser: OKLocationParser
+    fileprivate let photoParser: OKPhotoParser
+    fileprivate let locationParser: OKLocationParser
     
     init() {
         photoParser = OKPhotoParser()

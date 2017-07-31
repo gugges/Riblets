@@ -15,11 +15,12 @@ enum OKRootState {
 final class OKRootInteractor: OKInteractor {
     
     var launchOptions: [UIApplicationLaunchOptionsKey: Any]?
-    var currentContext: (state: OKRootState, type: OKRouter.Type)?
+    var currentContext: (state: OKRootState, router: OKRouter)?
     
     //MARK: - Bootstrap
     
     fileprivate func fetchBootstrap() {
+        // Simulate async login after 2 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.present(state: .loggedIn)
         }
@@ -29,30 +30,36 @@ final class OKRootInteractor: OKInteractor {
     
     fileprivate func present(state: OKRootState) {
         if state == currentContext?.state {
+            print("Trying to present the current state. You ok?")
             return
         }
         
         dismissCurrentContext()
         
-        let router: OKRouter
+        let childRouter: OKRouter
+        let animated: Bool
         
         switch state {
         case .launch:
-            router = OKLaunchBuilder.build()
+            childRouter = OKLaunchBuilder.build(with: nil)
+            animated = false
             
         case .loginLink:
-            router = OKLaunchBuilder.build()
+            childRouter = OKLaunchBuilder.build(with: nil)
+            animated = false
             
         case .loggedOut:
-            router = OKLaunchBuilder.build()
+            childRouter = OKLaunchBuilder.build(with: nil)
+            animated = true
             
         case .loggedIn:
-            router = OKMatchSearchBuilder.build()
+            childRouter = OKMatchSearchBuilder.build(with: nil)
+            animated = true
         }
         
-        currentContext = (state: state, type: type(of: router))
+        currentContext = (state: state, router: childRouter)
         
-        delegate?.present(router: router)
+        router?.present(childRouter: childRouter, animated: animated)
     }
     
     fileprivate func dismissCurrentContext() {
@@ -60,14 +67,15 @@ final class OKRootInteractor: OKInteractor {
             return
         }
         
-        delegate?.dismiss(routerType: currentContext.type)
+        router?.dismiss(childRouter: currentContext.router)
+        self.currentContext = nil
     }
-    
+
 }
 
 //MARK: - OKAppDelegate
 
-extension OKRootInteractor: OKAppDelegate {
+extension OKRootInteractor: OKAppDelegateHandler {
     
     func didFinishLaunching(with launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
         self.launchOptions = launchOptions

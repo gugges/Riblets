@@ -44,7 +44,7 @@ final class OKNetworkClientDefault: OKNetworkClient {
         task.resume()
     }
     
-    private func returnOnMainThread(completion: @escaping (OKNetworkClientResult<Any>) -> Void, result: OKNetworkClientResult<Any>) {
+    fileprivate func returnOnMainThread(completion: @escaping (OKNetworkClientResult<Any>) -> Void, result: OKNetworkClientResult<Any>) {
         DispatchQueue.main.async {
             completion(result)
         }

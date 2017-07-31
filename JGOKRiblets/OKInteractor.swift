@@ -8,15 +8,10 @@
 
 import Foundation
 
-protocol OKInteractorDelegate: class {
-    func present(router: OKRouter)
-    func dismiss(routerType: OKRouter.Type)
-}
-
 class OKInteractor {
     
     let presenter: OKPresenter?
-    weak var delegate: OKInteractorDelegate?
+    weak var router: OKRouter?
     
     init(presenter: OKPresenter?) {
         self.presenter = presenter

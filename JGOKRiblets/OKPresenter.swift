@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OKPresenter {
+class OKPresenter: NSObject {
     
     let viewController: UIViewController
     weak var interactor: OKInteractor?

@@ -8,11 +8,19 @@
 
 import UIKit
 
-final class OKMatchSearchInteractor: OKInteractor {
+protocol OKMatchSearchInteractorProtocol: class {
+    func reloadMatches()
+    func nextPage()
+    func selected(user: OKUser)
+}
 
-    private let matchSearchNetworkManager = OKMatchSearchNetworkManager()
+final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtocol {
+
+    fileprivate let matchSearchNetworkManager = OKMatchSearchNetworkManager()
     
-    func fetchMatches() {
+    //MARK: - OKMatchSearchInteractorProtocol
+    
+    func reloadMatches() {
         matchSearchNetworkManager.getMatches { (result) in
             switch result {
             case .success(let matches):
@@ -24,9 +32,17 @@ final class OKMatchSearchInteractor: OKInteractor {
         }
     }
     
+    func nextPage() {
+        
+    }
+    
+    func selected(user: OKUser) {
+        //router?.present(router: <#T##OKRouter#>, animated: <#T##Bool#>)
+    }
+    
     //MARK: - Helpers
     
-    private func matchSearchPresenter() -> OKMatchSearchPresenter? {
+    fileprivate func matchSearchPresenter() -> OKMatchSearchPresenter? {
         return presenter as? OKMatchSearchPresenter
     }
 }

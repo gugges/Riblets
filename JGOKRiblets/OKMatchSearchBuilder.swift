@@ -10,9 +10,10 @@ import UIKit
 
 struct OKMatchSearchBuilder: OKBuilder {
     
-    static func build() -> OKMatchSearchRouter {
+    static func build(with: Any?) -> OKMatchSearchRouter {
         let viewController = OKMatchSearchViewController()
-        let presenter = OKMatchSearchPresenter(viewController: viewController)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        let presenter = OKMatchSearchPresenter(viewController: navigationController)
         let interactor = OKMatchSearchInteractor(presenter: presenter)
         
         viewController.presenter = presenter

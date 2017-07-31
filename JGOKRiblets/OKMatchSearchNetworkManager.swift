@@ -10,11 +10,9 @@ import Foundation
 
 class OKMatchSearchNetworkManager {
     
-    private let client: OKNetworkClient
-    private let relativePath = "matchSample.json"
-    private var path: String {
-        return "\(client.basePath)\(relativePath)"
-    }
+    fileprivate let client: OKNetworkClient
+    fileprivate let relativePath = "matchSample.json"
+    fileprivate var path: String { return "\(client.basePath)\(relativePath)" }
     
     init(client: OKNetworkClient = OKNetworkClientDefault()) {
         self.client = client
@@ -22,6 +20,7 @@ class OKMatchSearchNetworkManager {
     
     func getMatches(completion: @escaping (OKNetworkClientResult<[OKUser]>) -> Void) {
         client.request(method: .get, path: path, parameters: nil) { (result) in
+            
             switch result {
             case .success(let response):
                 completion(self.parseGetMatches(response: response))
@@ -32,13 +31,13 @@ class OKMatchSearchNetworkManager {
         }
     }
     
-    private func parseGetMatches(response: Any) -> OKNetworkClientResult<[OKUser]> {
+    fileprivate func parseGetMatches(response: Any) -> OKNetworkClientResult<[OKUser]> {
         if let dictionary = response as? [AnyHashable : Any], let array = dictionary["data"] as? [[AnyHashable : Any]] {
             let users = array.flatMap(OKUserParser().parse)
-            
             return .success(users)
         }
         
         return .failure(OKNetworkClientError.unparsableModel)
     }
+    
 }

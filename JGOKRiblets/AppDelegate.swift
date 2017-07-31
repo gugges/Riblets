@@ -8,25 +8,28 @@
 
 import UIKit
 
-protocol OKAppDelegate: class {
+protocol OKAppDelegateHandler: class {
     func didFinishLaunching(with launchOptions: [UIApplicationLaunchOptionsKey: Any]?)
     func application(continue userActivity: NSUserActivity) -> Bool
+}
+
+protocol OKAppDelegate: class {
+    func present(viewController: UIViewController, animated: Bool)
 }
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
     var rootRouter: OKRootRouter?
+    weak var appDelegateHandler: OKAppDelegateHandler?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow()
         
-        rootRouter = OKRootBuilder.build()
-        rootRouter?.delegate = self
-        rootRouter?.didFinishLaunching(with: launchOptions)
+        rootRouter = OKRootBuilder.build(with: self)
+        appDelegateHandler?.didFinishLaunching(with: launchOptions)
         
         window?.makeKeyAndVisible()
         
@@ -34,12 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-        return rootRouter?.application(continue: userActivity) ?? false
+        return appDelegateHandler?.application(continue: userActivity) ?? false
     }
     
 }
 
-extension AppDelegate: OKRouterDelegate {
+extension AppDelegate: OKAppDelegate {
     
     func present(viewController: UIViewController, animated: Bool) {
         guard let currentViewController = window?.rootViewController, animated else {
@@ -53,3 +56,4 @@ extension AppDelegate: OKRouterDelegate {
     }
     
 }
+

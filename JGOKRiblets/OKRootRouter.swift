@@ -10,24 +10,26 @@ import UIKit
 
 final class OKRootRouter: OKRouter {
     
+    unowned let appDelegate: AppDelegate
+    
+    init(interactor: OKInteractor, appDelegate: AppDelegate) {
+        self.appDelegate = appDelegate
+        super.init(interactor: interactor)
+        self.appDelegate.appDelegateHandler = rootInteractor()
+    }
+    
+    override func present(childRouter: OKRouter, animated: Bool) {
+        attach(childRouter: childRouter)
+        
+        if let childVC = childRouter.interactor.presenter?.viewController {
+            appDelegate.present(viewController: childVC, animated: animated)
+        }
+    }
+    
     //MARK: - Helpers
     
     fileprivate func rootInteractor() -> OKRootInteractor? {
         return interactor as? OKRootInteractor
-    }
-    
-}
-
-//MARK: - OKAppDelegate
-
-extension OKRootRouter: OKAppDelegate {
-    
-    func didFinishLaunching(with launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
-        rootInteractor()?.didFinishLaunching(with: launchOptions)
-    }
-    
-    func application(continue userActivity: NSUserActivity) -> Bool {
-        return rootInteractor()?.application(continue: userActivity) ?? false
     }
     
 }

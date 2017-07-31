@@ -9,6 +9,8 @@
 import UIKit
 
 protocol OKBuilder {
+    associatedtype C
     associatedtype T
-    static func build() -> T
+    
+    static func build(with context: C?) -> T
 }
