@@ -18,11 +18,11 @@ final class OKRootRouter: OKRouter {
         self.appDelegate.appDelegateHandler = rootInteractor()
     }
     
-    override func present(childRouter: OKRouter, animated: Bool) {
+    override func push(childRouter: OKRouter, animated: Bool) {
         attach(childRouter: childRouter)
         
         if let childVC = childRouter.interactor.presenter?.viewController {
-            appDelegate.present(viewController: childVC, animated: animated)
+            appDelegate.root(viewController: childVC, animated: animated)
         }
     }
     

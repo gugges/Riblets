@@ -17,27 +17,41 @@ protocol OKMatchSearchInteractorProtocol: class {
 final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtocol {
 
     fileprivate let matchSearchNetworkManager = OKMatchSearchNetworkManager()
+    fileprivate var fetchInProgress = false
     
     //MARK: - OKMatchSearchInteractorProtocol
     
     func reloadMatches() {
+        if fetchInProgress {
+            return
+        }
+        
+        fetchInProgress = true
+        
         matchSearchNetworkManager.getMatches { (result) in
             switch result {
-            case .success(let matches):
-                self.matchSearchPresenter()?.add(matches: matches)
+            case .success(let users):
+                self.matchSearchPresenter()?.add(users: users)
                 
             case .failure(let error):
                 self.matchSearchPresenter()?.display(error: error)
             }
+            
+            self.fetchInProgress = false
         }
     }
     
     func nextPage() {
-        
+        reloadMatches()
     }
     
     func selected(user: OKUser) {
-        //router?.present(router: <#T##OKRouter#>, animated: <#T##Bool#>)
+        // Fire mParticle Stats Here
+        // Create profile child router
+        // Ask router to push child router
+        
+        let matchSearchRouter = OKMatchSearchBuilder.build(with: false)
+        router?.push(childRouter: matchSearchRouter, animated: true)
     }
     
     //MARK: - Helpers

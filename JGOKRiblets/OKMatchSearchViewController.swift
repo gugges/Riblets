@@ -8,24 +8,24 @@
 
 import UIKit
 
-protocol OKMatchSearchViewControllerProtocol {    
-    func reloadData()
+protocol OKMatchSearchViewControllerProtocol {
     func showErrorState()
-    func addPage(with: [OKUser])
 }
 
 final class OKMatchSearchViewController: OKViewController, OKMatchSearchViewControllerProtocol {
     
     let collectionView: UICollectionView = {
-        let collectionViewLayout = UICollectionViewFlowLayout()
+        var collectionViewLayout = UICollectionViewFlowLayout()
         return UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
     }()
     
-    //MARK: - Lifecycle
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        
+        setupCollectionView()
+        setupRefreshControl()
     }
     
     //MARK: - Layout
@@ -38,18 +38,31 @@ final class OKMatchSearchViewController: OKViewController, OKMatchSearchViewCont
         }, completion: nil)
     }
     
-    //MARK: - OKMatchSearchViewControllerProtocol
+    //MARK: - Actions
     
-    func reloadData() {
-        
+    func refresh() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.refreshControl.endRefreshing()
+            self.controllerDelegate?.refresh?()
+        }
     }
+    
+    //MARK: - OKMatchSearchViewControllerProtocol
     
     func showErrorState() {
         
     }
     
-    func addPage(with: [OKUser]) {
-        
+    //MARK: - Setup
+    
+    fileprivate func setupCollectionView() {
+        view.addSubview(collectionView)
+        collectionView.pinToEdges(superView: view)
+    }
+    
+    fileprivate func setupRefreshControl() {
+        collectionView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
 
 }

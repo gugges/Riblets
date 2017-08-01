@@ -42,6 +42,12 @@
 		172F351C1F2DA31F00B9A21E /* OKMatchSearchUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F351A1F2DA31F00B9A21E /* OKMatchSearchUserCell.swift */; };
 		172F351D1F2DA31F00B9A21E /* OKMatchSearchUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 172F351B1F2DA31F00B9A21E /* OKMatchSearchUserCell.xib */; };
 		172F35211F2EECDF00B9A21E /* UIScrollView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F35201F2EECDF00B9A21E /* UIScrollView+Util.swift */; };
+		172F35241F3016D800B9A21E /* OKMatchSearchUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F35231F3016D800B9A21E /* OKMatchSearchUser.swift */; };
+		172F35261F30266C00B9A21E /* OKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F35251F30266C00B9A21E /* OKNavigationController.swift */; };
+		172F35281F302F9D00B9A21E /* OKImageNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F35271F302F9D00B9A21E /* OKImageNetworkManager.swift */; };
+		172F352A1F302FD500B9A21E /* OKImageNetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F35291F302FD500B9A21E /* OKImageNetworkManagerProtocol.swift */; };
+		172F352C1F30308600B9A21E /* UICollectionView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F352B1F30308600B9A21E /* UICollectionView+Util.swift */; };
+		172F352E1F3032E400B9A21E /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F352D1F3032E400B9A21E /* UIView+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +109,12 @@
 		172F351A1F2DA31F00B9A21E /* OKMatchSearchUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKMatchSearchUserCell.swift; sourceTree = "<group>"; };
 		172F351B1F2DA31F00B9A21E /* OKMatchSearchUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OKMatchSearchUserCell.xib; sourceTree = "<group>"; };
 		172F35201F2EECDF00B9A21E /* UIScrollView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Util.swift"; sourceTree = "<group>"; };
+		172F35231F3016D800B9A21E /* OKMatchSearchUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKMatchSearchUser.swift; sourceTree = "<group>"; };
+		172F35251F30266C00B9A21E /* OKNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKNavigationController.swift; sourceTree = "<group>"; };
+		172F35271F302F9D00B9A21E /* OKImageNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKImageNetworkManager.swift; sourceTree = "<group>"; };
+		172F35291F302FD500B9A21E /* OKImageNetworkManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKImageNetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		172F352B1F30308600B9A21E /* UICollectionView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Util.swift"; sourceTree = "<group>"; };
+		172F352D1F3032E400B9A21E /* UIView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +203,7 @@
 				172F34D31F245B4800B9A21E /* OKBuilder.swift */,
 				172F34D51F245B6600B9A21E /* OKPresenter.swift */,
 				172F34DC1F24628600B9A21E /* OKViewController.swift */,
+				172F35251F30266C00B9A21E /* OKNavigationController.swift */,
 			);
 			name = Riblet;
 			sourceTree = "<group>";
@@ -213,6 +226,7 @@
 				172F35141F298F8500B9A21E /* Match Search Riblet */,
 				172F35151F298F9400B9A21E /* Match Search Network Manager */,
 				172F35171F2DA2BB00B9A21E /* Match Search Views */,
+				172F35221F3015D000B9A21E /* Match Search View Models */,
 			);
 			name = "Match Search";
 			sourceTree = "<group>";
@@ -264,6 +278,8 @@
 				172F350E1F29873200B9A21E /* OKNetworkClientRequestMethod.swift */,
 				172F35121F298E8F00B9A21E /* OKNetworkClientError.swift */,
 				172F35101F29883300B9A21E /* OKNetworkClientDefault.swift */,
+				172F35291F302FD500B9A21E /* OKImageNetworkManagerProtocol.swift */,
+				172F35271F302F9D00B9A21E /* OKImageNetworkManager.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -301,8 +317,18 @@
 			isa = PBXGroup;
 			children = (
 				172F35201F2EECDF00B9A21E /* UIScrollView+Util.swift */,
+				172F352B1F30308600B9A21E /* UICollectionView+Util.swift */,
+				172F352D1F3032E400B9A21E /* UIView+Util.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		172F35221F3015D000B9A21E /* Match Search View Models */ = {
+			isa = PBXGroup;
+			children = (
+				172F35231F3016D800B9A21E /* OKMatchSearchUser.swift */,
+			);
+			name = "Match Search View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +472,9 @@
 				172F34EB1F246E3400B9A21E /* OKMatchSearchBuilder.swift in Sources */,
 				172F34E71F246E0A00B9A21E /* OKMatchSearchInteractor.swift in Sources */,
 				172F35091F29862A00B9A21E /* OKNetworkClient.swift in Sources */,
+				172F35241F3016D800B9A21E /* OKMatchSearchUser.swift in Sources */,
+				172F35261F30266C00B9A21E /* OKNavigationController.swift in Sources */,
+				172F352A1F302FD500B9A21E /* OKImageNetworkManagerProtocol.swift in Sources */,
 				172F34D41F245B4800B9A21E /* OKBuilder.swift in Sources */,
 				172F34DD1F24628600B9A21E /* OKViewController.swift in Sources */,
 				172F34FD1F297F8A00B9A21E /* OKLocation.swift in Sources */,
@@ -464,13 +493,16 @@
 				172F35001F2980B200B9A21E /* OKParser.swift in Sources */,
 				172F34D21F245B3E00B9A21E /* OKInteractor.swift in Sources */,
 				172F34E91F246E2500B9A21E /* OKMatchSearchRouter.swift in Sources */,
+				172F352C1F30308600B9A21E /* UICollectionView+Util.swift in Sources */,
 				172F34F21F2474CA00B9A21E /* OKRootRouter.swift in Sources */,
 				172F35111F29883300B9A21E /* OKNetworkClientDefault.swift in Sources */,
 				172F351C1F2DA31F00B9A21E /* OKMatchSearchUserCell.swift in Sources */,
 				172F34F61F25B22300B9A21E /* OKLaunchBuilder.swift in Sources */,
 				172F34D61F245B6600B9A21E /* OKPresenter.swift in Sources */,
+				172F35281F302F9D00B9A21E /* OKImageNetworkManager.swift in Sources */,
 				172F35131F298E8F00B9A21E /* OKNetworkClientError.swift in Sources */,
 				172F34E51F246DF600B9A21E /* OKMatchSearchPresenter.swift in Sources */,
+				172F352E1F3032E400B9A21E /* UIView+Util.swift in Sources */,
 				172F34D01F245B1E00B9A21E /* OKRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,6 +746,7 @@
 				172F34C71F245AFF00B9A21E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		172F34C81F245AFF00B9A21E /* Build configuration list for PBXNativeTarget "JGOKRibletsTests" */ = {
 			isa = XCConfigurationList;
@@ -722,6 +755,7 @@
 				172F34CA1F245AFF00B9A21E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		172F34CB1F245AFF00B9A21E /* Build configuration list for PBXNativeTarget "JGOKRibletsUITests" */ = {
 			isa = XCConfigurationList;
@@ -730,6 +764,7 @@
 				172F34CD1F245AFF00B9A21E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

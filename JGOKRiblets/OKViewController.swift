@@ -14,6 +14,8 @@ import UIKit
     @objc optional func viewDidAppear()
     @objc optional func viewWillDisappear()
     @objc optional func viewDidDisappear()
+    @objc optional func prefersStatusBarHidden() -> Bool
+    @objc optional func preferredStatusBarStyle() -> UIStatusBarStyle
     @objc optional func navigationButtonTapped(at index: Int)
     @objc optional func refresh()
     @objc optional func nextPage()
@@ -24,6 +26,14 @@ class OKViewController: UIViewController {
 
     weak var presenter: OKPresenter?
     weak var controllerDelegate: OKViewControllerDelegate?
+    
+    override var prefersStatusBarHidden: Bool {
+        return controllerDelegate?.prefersStatusBarHidden?() ?? false
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return controllerDelegate?.preferredStatusBarStyle?() ?? .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

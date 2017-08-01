@@ -14,7 +14,7 @@ protocol OKAppDelegateHandler: class {
 }
 
 protocol OKAppDelegate: class {
-    func present(viewController: UIViewController, animated: Bool)
+    func root(viewController: UIViewController, animated: Bool)
 }
 
 @UIApplicationMain
@@ -44,11 +44,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: OKAppDelegate {
     
-    func present(viewController: UIViewController, animated: Bool) {
+    func root(viewController: UIViewController, animated: Bool) {
         guard let currentViewController = window?.rootViewController, animated else {
             window?.rootViewController = viewController
             return
         }
+        
+        // This forces a navigation bar height update
+        window?.rootViewController = viewController
+        window?.rootViewController = currentViewController
         
         UIView.transition(from: currentViewController.view, to: viewController.view, duration: 0.45, options: .transitionFlipFromLeft) { (done) in
             self.window?.rootViewController = viewController

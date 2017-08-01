@@ -59,7 +59,7 @@ final class OKRootInteractor: OKInteractor {
         
         currentContext = (state: state, router: childRouter)
         
-        router?.present(childRouter: childRouter, animated: animated)
+        router?.push(childRouter: childRouter, animated: animated)
     }
     
     fileprivate func dismissCurrentContext() {
@@ -79,7 +79,15 @@ extension OKRootInteractor: OKAppDelegateHandler {
     
     func didFinishLaunching(with launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
         self.launchOptions = launchOptions
+        
+        // Setup frameworks
+        
+        // Capture deep link
+        
+        // Show appropriate loading state
         present(state: .launch)
+        
+        // Fetch bootstrap
         fetchBootstrap()
     }
     

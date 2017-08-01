@@ -16,6 +16,6 @@ extension UIScrollView {
         let currentOffset = isVertical ? contentOffset.y : contentOffset.x
         let frameSize = isVertical ? frame.height : frame.width
         
-        return (viewSize - currentOffset) / frameSize
+        return max(((viewSize - currentOffset) / frameSize) - 1, 0)
     }
 }

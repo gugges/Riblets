@@ -13,6 +13,7 @@ protocol OKRouterProtocol: class {
     func detach(childRouter: OKRouter) -> OKRouter?
     func dismiss(childRouter: OKRouter)
     func present(childRouter: OKRouter, animated: Bool)
+    func push(childRouter: OKRouter, animated: Bool)
 }
 
 class OKRouter: NSObject, OKRouterProtocol {
@@ -49,10 +50,21 @@ class OKRouter: NSObject, OKRouterProtocol {
     }
     
     func present(childRouter: OKRouter, animated: Bool) {
+        
+    }
+    
+    func push(childRouter: OKRouter, animated: Bool) {
         attach(childRouter: childRouter)
         
-        if let currentVC = VC(), let childVC = childRouter.VC() {
-            currentVC.present(childVC, animated: animated)
+        guard let childVC = childRouter.VC() else {
+            return
+        }
+        
+        if let currentVC = VC() as? UINavigationController  {
+            currentVC.pushViewController(childVC, animated: true)
+            
+        } else if let navController = VC()?.navigationController {
+            navController.pushViewController(childVC, animated: true)
         }
     }
     
