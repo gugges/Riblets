@@ -11,10 +11,7 @@ import UIKit
 final class OKRootRouter: OKRouter {
     
     unowned let appDelegate: AppDelegate
-    
-    fileprivate var Interactor: OKRootInteractor? {
-        return interactor as? OKRootInteractor
-    }
+    fileprivate var Interactor: OKRootInteractor? {  return interactor as? OKRootInteractor }
     
     init(interactor: OKInteractor, appDelegate: AppDelegate) {
         self.appDelegate = appDelegate

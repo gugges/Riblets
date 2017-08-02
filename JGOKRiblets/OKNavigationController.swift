@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OKNavigationController: UINavigationController {
+final class OKNavigationController: UINavigationController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return topViewController?.preferredStatusBarStyle ?? .default

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class OKMatchSearchNetworkManager {
+final class OKMatchSearchNetworkManager {
     
     fileprivate let client: OKNetworkClient
     fileprivate let relativePath = "matchSample.json"
