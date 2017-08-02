@@ -18,7 +18,6 @@ struct OKMatchSearchUserConstraints {
 struct OKMatchSearchUser {
     
     let user: OKUser
-    
     let imageNetworkManager: OKImageNetworkManagerProtocol
     let constraints = OKMatchSearchUserConstraints(usernameTopSpacing: 16,
                                                    usernameBottomSpacing: 6,

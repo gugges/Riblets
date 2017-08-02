@@ -18,6 +18,7 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
 
     fileprivate let matchSearchNetworkManager = OKMatchSearchNetworkManager()
     fileprivate var fetchInProgress = false
+    fileprivate var Presenter: OKMatchSearchPresenter? { return presenter as? OKMatchSearchPresenter }
     
     //MARK: - OKMatchSearchInteractorProtocol
     
@@ -31,10 +32,10 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
         matchSearchNetworkManager.getMatches { (result) in
             switch result {
             case .success(let users):
-                self.matchSearchPresenter()?.add(users: users)
+                self.Presenter?.add(users: users)
                 
             case .failure(let error):
-                self.matchSearchPresenter()?.display(error: error)
+                self.Presenter?.display(error: error)
             }
             
             self.fetchInProgress = false
@@ -50,13 +51,8 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
         // Create profile child router
         // Ask router to push child router
         
-        let matchSearchRouter = OKMatchSearchBuilder.build(with: false)
+        let matchSearchRouter = OKMatchSearchBuilder.build(components: false)
         router?.push(childRouter: matchSearchRouter, animated: true)
     }
-    
-    //MARK: - Helpers
-    
-    fileprivate func matchSearchPresenter() -> OKMatchSearchPresenter? {
-        return presenter as? OKMatchSearchPresenter
-    }
+
 }

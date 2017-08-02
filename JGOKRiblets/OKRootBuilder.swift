@@ -10,14 +10,14 @@ import UIKit
 
 struct OKRootBuilder: OKBuilder {
 
-    static func build(with context: AppDelegate?) -> OKRootRouter {
-        guard let context = context else {
+    static func build(components: AppDelegate?) -> OKRootRouter {
+        guard let components = components else {
             fatalError("Root builder requires AppDelegate context")
         }
         
         let interactor = OKRootInteractor(presenter: nil)
         
-        return OKRootRouter(interactor: interactor, appDelegate: context)
+        return OKRootRouter(interactor: interactor, appDelegate: components)
     }
     
 }

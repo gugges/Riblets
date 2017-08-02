@@ -41,6 +41,7 @@ final class OKMatchSearchViewController: OKViewController, OKMatchSearchViewCont
     //MARK: - Actions
     
     func refresh() {
+        // Simulate async call
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.refreshControl.endRefreshing()
             self.controllerDelegate?.refresh?()

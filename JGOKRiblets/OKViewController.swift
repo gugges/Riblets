@@ -53,6 +53,12 @@ class OKViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         controllerDelegate?.viewWillDisappear?()
+        
+        if isMovingFromParentViewController {
+            if let router = presenter?.interactor?.router {
+                _ = router.parent?.detach(childRouter: router)
+            }
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {

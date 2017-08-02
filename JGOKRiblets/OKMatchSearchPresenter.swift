@@ -16,11 +16,20 @@ protocol OKMatchSearchPresenterProtocol {
 final class OKMatchSearchPresenter: OKPresenter, OKMatchSearchPresenterProtocol {
     
     fileprivate var matches = [OKMatchSearchUser]()
+    fileprivate var Interactor: OKMatchSearchInteractor? { return interactor as? OKMatchSearchInteractor }
+    
+    fileprivate var ViewController: OKMatchSearchViewController? {
+        if let navigationController = viewController as? UINavigationController {
+            return navigationController.viewControllers.first as? OKMatchSearchViewController
+        }
+        
+        return viewController as? OKMatchSearchViewController
+    }
     
     override init(viewController: UIViewController) {
         super.init(viewController: viewController)
         
-        matchSearchViewController()?.controllerDelegate = self
+        ViewController?.controllerDelegate = self
     }
     
     //MARK: - OKMatchSearchPresenterProtocol
@@ -33,57 +42,45 @@ final class OKMatchSearchPresenter: OKPresenter, OKMatchSearchPresenterProtocol 
             matches.append(OKMatchSearchUser(user: user))
         }
         
-        let collectionView = matchSearchViewController()?.collectionView
+        let collectionView = ViewController?.collectionView
         
-        UIView.performWithoutAnimation {
-            collectionView?.performBatchUpdates({
-                collectionView?.insertItems(at: indexPaths)
-            }, completion: nil)
-        }
+        collectionView?.performBatchUpdates({
+            collectionView?.insertItems(at: indexPaths)
+        }, completion: nil)
     }
     
     func display(error: Error?) {
         // Format error
     }
     
+    func display(alertViewContext: Any) {
+        
+    }
+    
     //MARK: - Setup
     
     fileprivate func setupViewController() {
-        matchSearchViewController()?.view.backgroundColor = UIColor(red: 241/255, green: 241/255, blue: 245/255, alpha: 1)
-        matchSearchViewController()?.navigationController?.navigationBar.clipsToBounds = false
-        matchSearchViewController()?.navigationController?.navigationBar.isTranslucent = false
-        matchSearchViewController()?.navigationController?.navigationBar.barTintColor = UIColor(red: 93/255, green: 143/255, blue: 222/255, alpha: 1)
-        matchSearchViewController()?.navigationController?.navigationBar.tintColor = .white
+        ViewController?.view.backgroundColor = .colorGray7()
+        ViewController?.navigationController?.navigationBar.clipsToBounds = false
+        ViewController?.navigationController?.navigationBar.isTranslucent = false
+        ViewController?.navigationController?.navigationBar.barTintColor = .colorBlue3()
+        ViewController?.navigationController?.navigationBar.tintColor = .white
     }
     
     fileprivate func setupCollectionView() {
         let userCell = String(describing: OKMatchSearchUserCell.self)
-        matchSearchViewController()?.collectionView.register(UINib(nibName: userCell, bundle: nil), forCellWithReuseIdentifier: userCell)
-        matchSearchViewController()?.collectionView.dataSource = self
-        matchSearchViewController()?.collectionView.delegate = self
-        matchSearchViewController()?.collectionView.backgroundColor = .clear
+        ViewController?.collectionView.register(UINib(nibName: userCell, bundle: nil), forCellWithReuseIdentifier: userCell)
+        ViewController?.collectionView.dataSource = self
+        ViewController?.collectionView.delegate = self
+        ViewController?.collectionView.backgroundColor = .clear
         
         let itemSpacing: CGFloat = 16
         
-        if let flowLayout = matchSearchViewController()?.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+        if let flowLayout = ViewController?.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.sectionInset = UIEdgeInsets(top: itemSpacing, left: itemSpacing, bottom: itemSpacing, right: itemSpacing)
             flowLayout.minimumInteritemSpacing = itemSpacing
             flowLayout.minimumLineSpacing = itemSpacing
         }
-    }
-    
-    //MARK: - Helpers
-    
-    fileprivate func matchSearchInteractor() -> OKMatchSearchInteractor? {
-        return interactor as? OKMatchSearchInteractor
-    }
-    
-    fileprivate func matchSearchViewController() -> OKMatchSearchViewController? {
-        if let navigationController = viewController as? UINavigationController {
-            return navigationController.viewControllers.first as? OKMatchSearchViewController
-        }
-        
-        return viewController as? OKMatchSearchViewController
     }
     
 }
@@ -100,13 +97,13 @@ extension OKMatchSearchPresenter: OKViewControllerDelegate {
         setupViewController()
         setupCollectionView()
         
-        matchSearchInteractor()?.reloadMatches()
+        Interactor?.reloadMatches()
     }
     
     func refresh() {
         matches.removeAll()
-        matchSearchViewController()?.collectionView.reloadData()
-        matchSearchInteractor()?.reloadMatches()
+        ViewController?.collectionView.reloadData()
+        Interactor?.reloadMatches()
     }
     
 }
@@ -118,12 +115,12 @@ extension OKMatchSearchPresenter: UICollectionViewDelegateFlowLayout {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
       
         if scrollView.pagesRemaining() < 1.5 {
-            matchSearchInteractor()?.nextPage()
+            Interactor?.nextPage()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        matchSearchInteractor()?.selected(user: matches[indexPath.item].user)
+        Interactor?.selected(user: matches[indexPath.item].user)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -132,9 +129,14 @@ extension OKMatchSearchPresenter: UICollectionViewDelegateFlowLayout {
         }
         
         let itemsPerRow: CGFloat = 2
-        let marginsAndInsets: CGFloat = collectionViewFlowLayout.sectionInset.left + collectionViewFlowLayout.sectionInset.right + collectionViewFlowLayout.minimumInteritemSpacing * (itemsPerRow - 1)
-        let width: CGFloat = (collectionView.frame.width - marginsAndInsets) / itemsPerRow
-        let height: CGFloat = 280
+        let itemsPerColumn: CGFloat = 2
+        
+        let hMarginsAndInsets: CGFloat = collectionViewFlowLayout.sectionInset.left + collectionViewFlowLayout.sectionInset.right + collectionViewFlowLayout.minimumInteritemSpacing * (itemsPerRow - 1)
+        let vMarginsAndInsets: CGFloat = collectionViewFlowLayout.sectionInset.top + collectionViewFlowLayout.sectionInset.bottom + collectionViewFlowLayout.minimumLineSpacing * (itemsPerRow - 1)
+        
+        let width: CGFloat = floor((collectionView.frame.width - hMarginsAndInsets) / itemsPerRow)
+        let height: CGFloat = floor((collectionView.frame.height - vMarginsAndInsets) / itemsPerColumn)
+        
         return CGSize(width: width, height: height)
     }
 }

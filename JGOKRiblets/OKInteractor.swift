@@ -16,5 +16,11 @@ class OKInteractor {
     init(presenter: OKPresenter?) {
         self.presenter = presenter
     }
+ 
+    //MARK: - Helpers
+    
+    func presentProfile(with user: OKUser) {
+        
+    }
     
 }

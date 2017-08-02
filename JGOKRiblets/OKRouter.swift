@@ -18,9 +18,10 @@ protocol OKRouterProtocol: class {
 
 class OKRouter: NSObject, OKRouterProtocol {
     
-    weak var parent: OKRouter?
-    
     let interactor: OKInteractor
+    var ViewController: UIViewController? { return interactor.presenter?.viewController }
+    
+    weak var parent: OKRouter?
     lazy var childRouters = Set<OKRouter>()
     
     //MARK: - Lifecycle
@@ -31,7 +32,7 @@ class OKRouter: NSObject, OKRouterProtocol {
         self.interactor.router = self
     }
     
-    //MARK: - Child Router
+    //MARK: - OKRouterProtocol
     
     func attach(childRouter: OKRouter) {
         childRouter.parent = self
@@ -41,40 +42,33 @@ class OKRouter: NSObject, OKRouterProtocol {
     func detach(childRouter: OKRouter) -> OKRouter? {
         return childRouters.remove(childRouter)
     }
- 
-    //MARK: - OKRouterProtocol
     
     func dismiss(childRouter: OKRouter) {
         let childRouter = detach(childRouter: childRouter)
-        childRouter?.VC()?.dismiss(animated: true, completion: nil)
+        childRouter?.ViewController?.dismiss(animated: true, completion: nil)
     }
     
     func present(childRouter: OKRouter, animated: Bool) {
+        attach(childRouter: childRouter)
         
+        if let childViewController = childRouter.ViewController {
+            ViewController?.present(childViewController, animated: true, completion: nil)
+        }
     }
     
     func push(childRouter: OKRouter, animated: Bool) {
         attach(childRouter: childRouter)
         
-        guard let childVC = childRouter.VC() else {
+        guard let childViewController = childRouter.ViewController else {
             return
         }
         
-        if let currentVC = VC() as? UINavigationController  {
-            currentVC.pushViewController(childVC, animated: true)
+        if let currentVC = ViewController as? UINavigationController  {
+            currentVC.pushViewController(childViewController, animated: true)
             
-        } else if let navController = VC()?.navigationController {
-            navController.pushViewController(childVC, animated: true)
+        } else if let navController = ViewController?.navigationController {
+            navController.pushViewController(childViewController, animated: true)
         }
     }
     
-    //MARK: - Helpers
-    
-    func presentProfile(with user: OKUser) {
-        
-    }
-    
-    func VC() -> UIViewController? {
-        return interactor.presenter?.viewController
-    }
 }

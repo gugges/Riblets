@@ -41,19 +41,19 @@ final class OKRootInteractor: OKInteractor {
         
         switch state {
         case .launch:
-            childRouter = OKLaunchBuilder.build(with: nil)
+            childRouter = OKLaunchBuilder.build(components: nil)
             animated = false
             
         case .loginLink:
-            childRouter = OKLaunchBuilder.build(with: nil)
+            childRouter = OKLaunchBuilder.build(components: nil)
             animated = false
             
         case .loggedOut:
-            childRouter = OKLaunchBuilder.build(with: nil)
+            childRouter = OKLaunchBuilder.build(components: nil)
             animated = true
             
         case .loggedIn:
-            childRouter = OKMatchSearchBuilder.build(with: nil)
+            childRouter = OKMatchSearchBuilder.build(components: nil)
             animated = true
         }
         

@@ -12,24 +12,22 @@ final class OKRootRouter: OKRouter {
     
     unowned let appDelegate: AppDelegate
     
+    fileprivate var Interactor: OKRootInteractor? {
+        return interactor as? OKRootInteractor
+    }
+    
     init(interactor: OKInteractor, appDelegate: AppDelegate) {
         self.appDelegate = appDelegate
         super.init(interactor: interactor)
-        self.appDelegate.appDelegateHandler = rootInteractor()
+        self.appDelegate.appDelegateHandler = Interactor
     }
     
     override func push(childRouter: OKRouter, animated: Bool) {
         attach(childRouter: childRouter)
         
-        if let childVC = childRouter.interactor.presenter?.viewController {
-            appDelegate.root(viewController: childVC, animated: animated)
+        if let childViewController = childRouter.interactor.presenter?.viewController {
+            appDelegate.root(viewController: childViewController, animated: animated)
         }
-    }
-    
-    //MARK: - Helpers
-    
-    fileprivate func rootInteractor() -> OKRootInteractor? {
-        return interactor as? OKRootInteractor
     }
     
 }

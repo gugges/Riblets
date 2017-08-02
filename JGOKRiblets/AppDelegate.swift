@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow()
         
-        rootRouter = OKRootBuilder.build(with: self)
+        rootRouter = OKRootBuilder.build(components: self)
         appDelegateHandler?.didFinishLaunching(with: launchOptions)
         
         window?.makeKeyAndVisible()
