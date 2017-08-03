@@ -68,8 +68,7 @@ final class OKMatchSearchPresenter: OKPresenter, OKMatchSearchPresenterProtocol 
     }
     
     fileprivate func setupCollectionView() {
-        let userCell = String(describing: OKMatchSearchUserCell.self)
-        ViewController?.collectionView.register(UINib(nibName: userCell, bundle: nil), forCellWithReuseIdentifier: userCell)
+        ViewController?.collectionView.register(UINib(nibName: OKMatchSearchUserCell.reuseID(), bundle: nil), forCellWithReuseIdentifier: OKMatchSearchUserCell.reuseID())
         ViewController?.collectionView.dataSource = self
         ViewController?.collectionView.delegate = self
         ViewController?.collectionView.backgroundColor = .clear

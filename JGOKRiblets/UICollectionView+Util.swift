@@ -11,9 +11,8 @@ import UIKit
 extension UICollectionView {
     
     func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
-        let identifier = String(describing: T.self)
-        guard let cell = dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? T else {
-            fatalError("Could not dequeue cell with identifier \(identifier)")
+        guard let cell = dequeueReusableCell(withReuseIdentifier: T.reuseID(), for: indexPath) as? T else {
+            fatalError("Could not dequeue cell with identifier \(T.reuseID())")
         }
         
         return cell

@@ -49,6 +49,7 @@
 		172F352C1F30308600B9A21E /* UICollectionView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F352B1F30308600B9A21E /* UICollectionView+Util.swift */; };
 		172F352E1F3032E400B9A21E /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F352D1F3032E400B9A21E /* UIView+Util.swift */; };
 		174C29BE1F317B0B0021FD64 /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C29BD1F317B0A0021FD64 /* UIColor+Util.swift */; };
+		17F7F4F01F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7F4EF1F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		172F352B1F30308600B9A21E /* UICollectionView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Util.swift"; sourceTree = "<group>"; };
 		172F352D1F3032E400B9A21E /* UIView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 		174C29BD1F317B0A0021FD64 /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
+		17F7F4EF1F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				172F352B1F30308600B9A21E /* UICollectionView+Util.swift */,
+				17F7F4EF1F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift */,
 				174C29BD1F317B0A0021FD64 /* UIColor+Util.swift */,
 				172F35201F2EECDF00B9A21E /* UIScrollView+Util.swift */,
 				172F352D1F3032E400B9A21E /* UIView+Util.swift */,
@@ -471,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F7F4F01F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift in Sources */,
 				172F35061F29818600B9A21E /* OKUserParser.swift in Sources */,
 				172F34EB1F246E3400B9A21E /* OKMatchSearchBuilder.swift in Sources */,
 				172F34E71F246E0A00B9A21E /* OKMatchSearchInteractor.swift in Sources */,

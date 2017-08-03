@@ -22,7 +22,7 @@ final class OKRootRouter: OKRouter {
     override func push(childRouter: OKRouter, animated: Bool) {
         attach(childRouter: childRouter)
         
-        if let childViewController = childRouter.interactor.presenter?.viewController {
+        if let childViewController = childRouter.ViewController {
             appDelegate.root(viewController: childViewController, animated: animated)
         }
     }

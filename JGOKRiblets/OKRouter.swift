@@ -43,31 +43,40 @@ class OKRouter: NSObject, OKRouterProtocol {
         return childRouters.remove(childRouter)
     }
     
+    func detachFromParent() -> OKRouter? {
+        return parent?.detach(childRouter: self)
+    }
+    
     func dismiss(childRouter: OKRouter) {
         let childRouter = detach(childRouter: childRouter)
         childRouter?.ViewController?.dismiss(animated: true, completion: nil)
     }
     
     func present(childRouter: OKRouter, animated: Bool) {
-        attach(childRouter: childRouter)
-        
         if let childViewController = childRouter.ViewController {
+            attach(childRouter: childRouter)
             ViewController?.present(childViewController, animated: true, completion: nil)
+            
+        } else {
+            fatalError("Cannot present child router without viewController")
         }
     }
     
     func push(childRouter: OKRouter, animated: Bool) {
-        attach(childRouter: childRouter)
-        
         guard let childViewController = childRouter.ViewController else {
-            return
+            fatalError("Cannot push child router without viewController")
         }
+        
+        attach(childRouter: childRouter)
         
         if let currentVC = ViewController as? UINavigationController  {
             currentVC.pushViewController(childViewController, animated: true)
             
         } else if let navController = ViewController?.navigationController {
             navController.pushViewController(childViewController, animated: true)
+            
+        } else {
+            fatalError("Cannot push child router without navigationController")
         }
     }
     
