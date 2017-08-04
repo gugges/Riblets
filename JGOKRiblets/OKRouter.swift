@@ -11,6 +11,7 @@ import UIKit
 protocol OKRouterProtocol: class {
     func attach(childRouter: OKRouter)
     func detach(childRouter: OKRouter) -> OKRouter?
+    func detachFromParent() -> OKRouter?
     func dismiss(childRouter: OKRouter)
     func present(childRouter: OKRouter, animated: Bool)
     func push(childRouter: OKRouter, animated: Bool)
