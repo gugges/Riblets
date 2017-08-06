@@ -9,13 +9,14 @@
 import UIKit
 
 @objc protocol OKViewControllerDelegate: class {
+    @objc optional func prefersStatusBarHidden() -> Bool
+    @objc optional func preferredStatusBarStyle() -> UIStatusBarStyle
+    
     @objc optional func viewDidLoad()
     @objc optional func viewWillAppear()
     @objc optional func viewDidAppear()
     @objc optional func viewWillDisappear()
     @objc optional func viewDidDisappear()
-    @objc optional func prefersStatusBarHidden() -> Bool
-    @objc optional func preferredStatusBarStyle() -> UIStatusBarStyle
     
     @objc optional func navigationButtonTapped(at index: Int)
     @objc optional func refresh()

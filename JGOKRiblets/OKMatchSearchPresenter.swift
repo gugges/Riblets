@@ -55,13 +55,17 @@ final class OKMatchSearchPresenter: OKPresenter, OKMatchSearchPresenterProtocol 
     
     fileprivate func object(at indexPath: IndexPath) -> OKMatchSearchObject? {
         let section = OKMatchSearchSection(rawValue: indexPath.section)
+        
+        guard let objects = matches[section], indexPath.item < objects.count else {
+            return nil
+        }
+        
         return matches[section]?[indexPath.item]
     }
     
     fileprivate func refreshMatches() {
         matches.removeAll()
         ViewController?.collectionView.reloadData()
-        ViewController?.refreshControl.beginRefreshing()
         Interactor?.reloadMatches()
     }
     
@@ -96,7 +100,7 @@ extension OKMatchSearchPresenter: OKViewControllerDelegate {
     func viewDidLoad() {
         setupViewController()
         setupCollectionView()
-        refreshMatches()
+        Interactor?.reloadMatches()
     }
     
     func refresh() {

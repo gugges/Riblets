@@ -23,19 +23,16 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
         
         fetchInProgress = true
         
-        // Fake async request
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4) { [weak self] in
-            self?.matchSearchNetworkManager.getMatches { [weak self] (result) in
-                switch result {
-                case .success(let users):
-                    self?.Presenter?.add(users: users)
-                    
-                case .failure(let error):
-                    self?.Presenter?.display(error: error)
-                }
+        matchSearchNetworkManager.getMatches { [weak self] (result) in
+            switch result {
+            case .success(let users):
+                self?.Presenter?.add(users: users)
                 
-                self?.fetchInProgress = false
+            case .failure(let error):
+                self?.Presenter?.display(error: error)
             }
+            
+            self?.fetchInProgress = false
         }
     }
     

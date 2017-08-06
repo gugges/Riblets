@@ -59,6 +59,8 @@
 		178F80C91F36B3D1008E5304 /* OKMatchSearchObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178F80C81F36B3D1008E5304 /* OKMatchSearchObject.swift */; };
 		178F80CB1F36B50D008E5304 /* OKMatchSearchSizingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178F80CA1F36B50D008E5304 /* OKMatchSearchSizingFactory.swift */; };
 		17AE8FF61F364EB10026BC5F /* UIAlertController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE8FF51F364EB10026BC5F /* UIAlertController+Util.swift */; };
+		17E3DD4F1F36DE5800D43C06 /* OKLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E3DD4D1F36DE5800D43C06 /* OKLaunchViewController.swift */; };
+		17E3DD501F36DE5800D43C06 /* OKLaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E3DD4E1F36DE5800D43C06 /* OKLaunchViewController.xib */; };
 		17F7F4F01F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7F4EF1F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift */; };
 		17F7F4F21F3615BB00A0CCEC /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7F4F11F3615BB00A0CCEC /* UIViewController+Util.swift */; };
 /* End PBXBuildFile section */
@@ -139,6 +141,8 @@
 		178F80C81F36B3D1008E5304 /* OKMatchSearchObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchObject.swift; sourceTree = "<group>"; };
 		178F80CA1F36B50D008E5304 /* OKMatchSearchSizingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchSizingFactory.swift; sourceTree = "<group>"; };
 		17AE8FF51F364EB10026BC5F /* UIAlertController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Util.swift"; sourceTree = "<group>"; };
+		17E3DD4D1F36DE5800D43C06 /* OKLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKLaunchViewController.swift; sourceTree = "<group>"; };
+		17E3DD4E1F36DE5800D43C06 /* OKLaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OKLaunchViewController.xib; sourceTree = "<group>"; };
 		17F7F4EF1F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Util.swift"; sourceTree = "<group>"; };
 		17F7F4F11F3615BB00A0CCEC /* UIViewController+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,6 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				172F34F51F25B22300B9A21E /* OKLaunchBuilder.swift */,
+				17E3DD4D1F36DE5800D43C06 /* OKLaunchViewController.swift */,
+				17E3DD4E1F36DE5800D43C06 /* OKLaunchViewController.xib */,
 			);
 			name = Launch;
 			sourceTree = "<group>";
@@ -513,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				172F34AB1F245AFF00B9A21E /* LaunchScreen.storyboard in Resources */,
+				17E3DD501F36DE5800D43C06 /* OKLaunchViewController.xib in Resources */,
 				172F351D1F2DA31F00B9A21E /* OKMatchSearchUserCell.xib in Resources */,
 				178F80C41F366DB1008E5304 /* OKLoadingCell.xib in Resources */,
 				172F34A81F245AFF00B9A21E /* Assets.xcassets in Resources */,
@@ -547,6 +554,7 @@
 				172F34E71F246E0A00B9A21E /* OKMatchSearchInteractor.swift in Sources */,
 				172F35091F29862A00B9A21E /* OKNetworkClient.swift in Sources */,
 				172F35241F3016D800B9A21E /* OKMatchSearchUser.swift in Sources */,
+				17E3DD4F1F36DE5800D43C06 /* OKLaunchViewController.swift in Sources */,
 				17F7F4F21F3615BB00A0CCEC /* UIViewController+Util.swift in Sources */,
 				172F35261F30266C00B9A21E /* OKNavigationController.swift in Sources */,
 				172F352A1F302FD500B9A21E /* OKImageNetworkManagerProtocol.swift in Sources */,

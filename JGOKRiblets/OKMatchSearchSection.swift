@@ -18,7 +18,7 @@ enum OKMatchSearchSection: Int {
         case 0:
             self = .user
         case 1:
-            self = .loading
+            self = .loading // .loading must be highest index
         default:
             self = .unknown
         }

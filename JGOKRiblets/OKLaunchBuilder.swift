@@ -11,9 +11,7 @@ import UIKit
 struct OKLaunchBuilder: OKBuilder {
 
     static func build(components: Any?) -> OKRouter {
-        let viewController = OKViewController()
-        viewController.view.backgroundColor = .colorBlue3()
-        return OKRouter(interactor: OKInteractor(presenter: OKPresenter(viewController: viewController)))
+        return OKRouter(interactor: OKInteractor(presenter: OKPresenter(viewController: OKLaunchViewController())))
     }
     
 }
