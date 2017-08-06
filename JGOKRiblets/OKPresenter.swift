@@ -17,4 +17,15 @@ class OKPresenter: NSObject {
         self.viewController = viewController
     }
     
+    func display(alertControllerContext: OKAlertControllerContext) {
+        let alertController = UIAlertController(title: alertControllerContext.title, message: alertControllerContext.subtitle, preferredStyle: alertControllerContext.preferredStyle)
+        
+        for actionContext in alertControllerContext.actions {
+            let alertAction = UIAlertAction(title: actionContext.title, style: actionContext.style, handler: actionContext.handler)
+            
+            alertController.addAction(alertAction)
+        }
+        
+        viewController.present(alertController, animated: true, completion: nil)
+    }
 }

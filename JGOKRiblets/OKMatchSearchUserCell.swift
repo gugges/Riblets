@@ -50,10 +50,11 @@ extension OKMatchSearchUserCell {
         labelBackgroundView.backgroundColor = matchUser.labelBackgroundColor()
         profilePictureImageView.backgroundColor = matchUser.imageViewBackgroundColor()
         
+        profilePictureImageView.contentMode = matchUser.profilePhotoContentMode()
+        
         usernameLabel.attributedText = matchUser.username()
         ageLocationLabel.attributedText = matchUser.ageLocation()
         matchPercentLabel.attributedText = matchUser.matchPercent()
-        profilePictureImageView.contentMode = matchUser.profilePhotoContentMode()
         
         imageDataTask = matchUser.imageNetworkManager.request(url: matchUser.profilePhotoImageURL()) { [weak self] (image) in
             self?.profilePictureImageView.image = image

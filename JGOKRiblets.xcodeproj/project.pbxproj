@@ -48,8 +48,19 @@
 		172F352A1F302FD500B9A21E /* OKImageNetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F35291F302FD500B9A21E /* OKImageNetworkManagerProtocol.swift */; };
 		172F352C1F30308600B9A21E /* UICollectionView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F352B1F30308600B9A21E /* UICollectionView+Util.swift */; };
 		172F352E1F3032E400B9A21E /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F352D1F3032E400B9A21E /* UIView+Util.swift */; };
+		173DD55F1F36460E00F50656 /* OKAlertControllerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173DD55E1F36460E00F50656 /* OKAlertControllerContext.swift */; };
 		174C29BE1F317B0B0021FD64 /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C29BD1F317B0A0021FD64 /* UIColor+Util.swift */; };
+		178E495E1F36B6E90086EFA0 /* OKMatchSearchInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E495D1F36B6E90086EFA0 /* OKMatchSearchInteractorProtocol.swift */; };
+		178E49601F36B7210086EFA0 /* OKMatchSearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E495F1F36B7210086EFA0 /* OKMatchSearchPresenterProtocol.swift */; };
+		178E49621F36B7910086EFA0 /* OKMatchSearchSizingFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E49611F36B7910086EFA0 /* OKMatchSearchSizingFactoryProtocol.swift */; };
+		178F80C31F366DB1008E5304 /* OKLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178F80C11F366DB1008E5304 /* OKLoadingCell.swift */; };
+		178F80C41F366DB1008E5304 /* OKLoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 178F80C21F366DB1008E5304 /* OKLoadingCell.xib */; };
+		178F80C71F36B3B4008E5304 /* OKMatchSearchSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178F80C61F36B3B3008E5304 /* OKMatchSearchSection.swift */; };
+		178F80C91F36B3D1008E5304 /* OKMatchSearchObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178F80C81F36B3D1008E5304 /* OKMatchSearchObject.swift */; };
+		178F80CB1F36B50D008E5304 /* OKMatchSearchSizingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178F80CA1F36B50D008E5304 /* OKMatchSearchSizingFactory.swift */; };
+		17AE8FF61F364EB10026BC5F /* UIAlertController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AE8FF51F364EB10026BC5F /* UIAlertController+Util.swift */; };
 		17F7F4F01F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7F4EF1F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift */; };
+		17F7F4F21F3615BB00A0CCEC /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7F4F11F3615BB00A0CCEC /* UIViewController+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,8 +128,19 @@
 		172F35291F302FD500B9A21E /* OKImageNetworkManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OKImageNetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		172F352B1F30308600B9A21E /* UICollectionView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Util.swift"; sourceTree = "<group>"; };
 		172F352D1F3032E400B9A21E /* UIView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
+		173DD55E1F36460E00F50656 /* OKAlertControllerContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKAlertControllerContext.swift; sourceTree = "<group>"; };
 		174C29BD1F317B0A0021FD64 /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
+		178E495D1F36B6E90086EFA0 /* OKMatchSearchInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchInteractorProtocol.swift; sourceTree = "<group>"; };
+		178E495F1F36B7210086EFA0 /* OKMatchSearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchPresenterProtocol.swift; sourceTree = "<group>"; };
+		178E49611F36B7910086EFA0 /* OKMatchSearchSizingFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchSizingFactoryProtocol.swift; sourceTree = "<group>"; };
+		178F80C11F366DB1008E5304 /* OKLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKLoadingCell.swift; sourceTree = "<group>"; };
+		178F80C21F366DB1008E5304 /* OKLoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OKLoadingCell.xib; sourceTree = "<group>"; };
+		178F80C61F36B3B3008E5304 /* OKMatchSearchSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchSection.swift; sourceTree = "<group>"; };
+		178F80C81F36B3D1008E5304 /* OKMatchSearchObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchObject.swift; sourceTree = "<group>"; };
+		178F80CA1F36B50D008E5304 /* OKMatchSearchSizingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchSizingFactory.swift; sourceTree = "<group>"; };
+		17AE8FF51F364EB10026BC5F /* UIAlertController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Util.swift"; sourceTree = "<group>"; };
 		17F7F4EF1F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Util.swift"; sourceTree = "<group>"; };
+		17F7F4F11F3615BB00A0CCEC /* UIViewController+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +242,7 @@
 				172F34F71F297ED100B9A21E /* Models */,
 				172F35071F29823500B9A21E /* Network */,
 				172F34FE1F29801C00B9A21E /* Parsers */,
+				178F80C01F366D86008E5304 /* Views */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -259,6 +282,7 @@
 				172F34FC1F297F8A00B9A21E /* OKLocation.swift */,
 				172F34FA1F297F4800B9A21E /* OKPhoto.swift */,
 				172F34F81F297F0D00B9A21E /* OKUser.swift */,
+				173DD55E1F36460E00F50656 /* OKAlertControllerContext.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -291,6 +315,9 @@
 		172F35141F298F8500B9A21E /* Match Search Riblet */ = {
 			isa = PBXGroup;
 			children = (
+				178F80C51F36B3A1008E5304 /* Match Search Enums */,
+				178E495C1F36B6BA0086EFA0 /* Match Search Protocols */,
+				178F80CC1F36B515008E5304 /* Match Search Factories */,
 				172F34E81F246E2500B9A21E /* OKMatchSearchRouter.swift */,
 				172F34E61F246E0A00B9A21E /* OKMatchSearchInteractor.swift */,
 				172F34EA1F246E3400B9A21E /* OKMatchSearchBuilder.swift */,
@@ -320,11 +347,13 @@
 		172F351F1F2EECCB00B9A21E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				17AE8FF51F364EB10026BC5F /* UIAlertController+Util.swift */,
 				172F352B1F30308600B9A21E /* UICollectionView+Util.swift */,
 				17F7F4EF1F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift */,
 				174C29BD1F317B0A0021FD64 /* UIColor+Util.swift */,
 				172F35201F2EECDF00B9A21E /* UIScrollView+Util.swift */,
 				172F352D1F3032E400B9A21E /* UIView+Util.swift */,
+				17F7F4F11F3615BB00A0CCEC /* UIViewController+Util.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -335,6 +364,42 @@
 				172F35231F3016D800B9A21E /* OKMatchSearchUser.swift */,
 			);
 			name = "Match Search View Models";
+			sourceTree = "<group>";
+		};
+		178E495C1F36B6BA0086EFA0 /* Match Search Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				178E495D1F36B6E90086EFA0 /* OKMatchSearchInteractorProtocol.swift */,
+				178E495F1F36B7210086EFA0 /* OKMatchSearchPresenterProtocol.swift */,
+				178E49611F36B7910086EFA0 /* OKMatchSearchSizingFactoryProtocol.swift */,
+			);
+			name = "Match Search Protocols";
+			sourceTree = "<group>";
+		};
+		178F80C01F366D86008E5304 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				178F80C11F366DB1008E5304 /* OKLoadingCell.swift */,
+				178F80C21F366DB1008E5304 /* OKLoadingCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		178F80C51F36B3A1008E5304 /* Match Search Enums */ = {
+			isa = PBXGroup;
+			children = (
+				178F80C61F36B3B3008E5304 /* OKMatchSearchSection.swift */,
+				178F80C81F36B3D1008E5304 /* OKMatchSearchObject.swift */,
+			);
+			name = "Match Search Enums";
+			sourceTree = "<group>";
+		};
+		178F80CC1F36B515008E5304 /* Match Search Factories */ = {
+			isa = PBXGroup;
+			children = (
+				178F80CA1F36B50D008E5304 /* OKMatchSearchSizingFactory.swift */,
+			);
+			name = "Match Search Factories";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,6 +514,7 @@
 			files = (
 				172F34AB1F245AFF00B9A21E /* LaunchScreen.storyboard in Resources */,
 				172F351D1F2DA31F00B9A21E /* OKMatchSearchUserCell.xib in Resources */,
+				178F80C41F366DB1008E5304 /* OKLoadingCell.xib in Resources */,
 				172F34A81F245AFF00B9A21E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,16 +542,20 @@
 			files = (
 				17F7F4F01F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift in Sources */,
 				172F35061F29818600B9A21E /* OKUserParser.swift in Sources */,
+				178F80CB1F36B50D008E5304 /* OKMatchSearchSizingFactory.swift in Sources */,
 				172F34EB1F246E3400B9A21E /* OKMatchSearchBuilder.swift in Sources */,
 				172F34E71F246E0A00B9A21E /* OKMatchSearchInteractor.swift in Sources */,
 				172F35091F29862A00B9A21E /* OKNetworkClient.swift in Sources */,
 				172F35241F3016D800B9A21E /* OKMatchSearchUser.swift in Sources */,
+				17F7F4F21F3615BB00A0CCEC /* UIViewController+Util.swift in Sources */,
 				172F35261F30266C00B9A21E /* OKNavigationController.swift in Sources */,
 				172F352A1F302FD500B9A21E /* OKImageNetworkManagerProtocol.swift in Sources */,
 				172F34D41F245B4800B9A21E /* OKBuilder.swift in Sources */,
 				172F34DD1F24628600B9A21E /* OKViewController.swift in Sources */,
 				172F34FD1F297F8A00B9A21E /* OKLocation.swift in Sources */,
 				172F35021F2980DF00B9A21E /* OKPhotoParser.swift in Sources */,
+				178E495E1F36B6E90086EFA0 /* OKMatchSearchInteractorProtocol.swift in Sources */,
+				17AE8FF61F364EB10026BC5F /* UIAlertController+Util.swift in Sources */,
 				172F350D1F2986D200B9A21E /* OKMatchSearchNetworkManager.swift in Sources */,
 				172F34FB1F297F4800B9A21E /* OKPhoto.swift in Sources */,
 				172F34EE1F24742A00B9A21E /* OKRootBuilder.swift in Sources */,
@@ -501,7 +571,10 @@
 				172F35001F2980B200B9A21E /* OKParser.swift in Sources */,
 				172F34D21F245B3E00B9A21E /* OKInteractor.swift in Sources */,
 				172F34E91F246E2500B9A21E /* OKMatchSearchRouter.swift in Sources */,
+				173DD55F1F36460E00F50656 /* OKAlertControllerContext.swift in Sources */,
+				178F80C31F366DB1008E5304 /* OKLoadingCell.swift in Sources */,
 				172F352C1F30308600B9A21E /* UICollectionView+Util.swift in Sources */,
+				178E49601F36B7210086EFA0 /* OKMatchSearchPresenterProtocol.swift in Sources */,
 				172F34F21F2474CA00B9A21E /* OKRootRouter.swift in Sources */,
 				172F35111F29883300B9A21E /* OKNetworkClientDefault.swift in Sources */,
 				172F351C1F2DA31F00B9A21E /* OKMatchSearchUserCell.swift in Sources */,
@@ -509,8 +582,11 @@
 				172F34D61F245B6600B9A21E /* OKPresenter.swift in Sources */,
 				172F35281F302F9D00B9A21E /* OKImageNetworkManager.swift in Sources */,
 				172F35131F298E8F00B9A21E /* OKNetworkClientError.swift in Sources */,
+				178F80C71F36B3B4008E5304 /* OKMatchSearchSection.swift in Sources */,
+				178F80C91F36B3D1008E5304 /* OKMatchSearchObject.swift in Sources */,
 				172F34E51F246DF600B9A21E /* OKMatchSearchPresenter.swift in Sources */,
 				172F352E1F3032E400B9A21E /* UIView+Util.swift in Sources */,
+				178E49621F36B7910086EFA0 /* OKMatchSearchSizingFactoryProtocol.swift in Sources */,
 				172F34D01F245B1E00B9A21E /* OKRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

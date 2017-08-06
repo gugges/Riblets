@@ -68,13 +68,9 @@ class OKRouter: NSObject, OKRouterProtocol {
             fatalError("Cannot push child router without viewController")
         }
         
-        attach(childRouter: childRouter)
-        
-        if let currentVC = ViewController as? UINavigationController  {
-            currentVC.pushViewController(childViewController, animated: true)
-            
-        } else if let navController = ViewController?.navigationController {
-            navController.pushViewController(childViewController, animated: true)
+        if let navigationController = ViewController?.ok_navigationController() {
+            attach(childRouter: childRouter)
+            navigationController.pushViewController(childViewController, animated: true)
             
         } else {
             fatalError("Cannot push child router without navigationController")

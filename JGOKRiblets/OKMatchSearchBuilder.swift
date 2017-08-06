@@ -14,6 +14,7 @@ struct OKMatchSearchBuilder: OKBuilder {
         let isNavController = components ?? true
         let viewController = OKMatchSearchViewController()
         let navigationController = isNavController ? OKNavigationController(rootViewController: viewController) : viewController
+        
         let presenter = OKMatchSearchPresenter(viewController: navigationController)
         let interactor = OKMatchSearchInteractor(presenter: presenter)
         

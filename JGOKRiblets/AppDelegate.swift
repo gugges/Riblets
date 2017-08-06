@@ -11,10 +11,11 @@ import UIKit
 protocol OKAppDelegateHandler: class {
     func didFinishLaunching(with launchOptions: [UIApplicationLaunchOptionsKey: Any]?)
     func application(continue userActivity: NSUserActivity) -> Bool
+    func application(open url: URL) -> Bool
 }
 
 protocol OKAppDelegate: class {
-    func root(viewController: UIViewController, animated: Bool)
+    func setRoot(viewController: UIViewController, animated: Bool)
 }
 
 @UIApplicationMain
@@ -36,6 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return appDelegateHandler?.application(open: url) ?? false
+    }
+    
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
         return appDelegateHandler?.application(continue: userActivity) ?? false
     }
@@ -44,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: OKAppDelegate {
     
-    func root(viewController: UIViewController, animated: Bool) {
+    func setRoot(viewController: UIViewController, animated: Bool) {
         guard let currentViewController = window?.rootViewController, animated else {
             window?.rootViewController = viewController
             return
@@ -60,4 +65,3 @@ extension AppDelegate: OKAppDelegate {
     }
     
 }
-

@@ -53,6 +53,7 @@ final class OKRootInteractor: OKInteractor {
             animated = true
             
         case .loggedIn:
+            // Pass along deep link to log in builder
             childRouter = OKMatchSearchBuilder.build(components: nil)
             animated = true
         }
@@ -79,11 +80,10 @@ extension OKRootInteractor: OKAppDelegateHandler {
     
     func didFinishLaunching(with launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
         self.launchOptions = launchOptions
+        let path = launchOptions?[UIApplicationLaunchOptionsKey.url] as? String
         
         // Setup frameworks
-        
-        // Capture deep link
-        
+        // Parse launch options to capture deep link
         // Show appropriate loading state
         present(state: .launch)
         
@@ -94,4 +94,9 @@ extension OKRootInteractor: OKAppDelegateHandler {
     func application(continue userActivity: NSUserActivity) -> Bool {
         return true
     }
+    
+    func application(open url: URL) -> Bool {
+        return true
+    }
+    
 }

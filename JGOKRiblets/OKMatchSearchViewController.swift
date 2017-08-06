@@ -8,11 +8,7 @@
 
 import UIKit
 
-protocol OKMatchSearchViewControllerProtocol {
-    func showErrorState()
-}
-
-final class OKMatchSearchViewController: OKViewController, OKMatchSearchViewControllerProtocol {
+final class OKMatchSearchViewController: OKViewController {
     
     let collectionView: UICollectionView = {
         var collectionViewLayout = UICollectionViewFlowLayout()
@@ -23,9 +19,9 @@ final class OKMatchSearchViewController: OKViewController, OKMatchSearchViewCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupCollectionView()
-        setupRefreshControl()
+        addCollectionView()
+        addRefreshControl()
+        controllerDelegate?.viewDidLoad?()
     }
     
     //MARK: - Layout
@@ -40,28 +36,22 @@ final class OKMatchSearchViewController: OKViewController, OKMatchSearchViewCont
     
     //MARK: - Actions
     
-    func refresh() {
-        // Simulate async call
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.refreshControl.endRefreshing()
-            self.controllerDelegate?.refresh?()
-        }
+    override func animateErrorState(visible: Bool) {
+        
     }
     
-    //MARK: - OKMatchSearchViewControllerProtocol
-    
-    func showErrorState() {
-        
+    func refresh() {
+        self.controllerDelegate?.refresh?()
     }
     
     //MARK: - Setup
     
-    fileprivate func setupCollectionView() {
+    fileprivate func addCollectionView() {
         view.addSubview(collectionView)
         collectionView.pinToEdges(superView: view)
     }
     
-    fileprivate func setupRefreshControl() {
+    fileprivate func addRefreshControl() {
         collectionView.addSubview(refreshControl)
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }

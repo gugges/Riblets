@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct OKMatchSearchUserConstraints {
+struct OKMatchSearchUserConstraintSizes {
     let usernameTopSpacing: CGFloat
     let usernameBottomSpacing: CGFloat
     let ageLocationBottomSpacing: CGFloat
@@ -19,10 +19,10 @@ struct OKMatchSearchUser {
     
     let user: OKUser
     let imageNetworkManager: OKImageNetworkManagerProtocol
-    let constraints = OKMatchSearchUserConstraints(usernameTopSpacing: 16,
-                                                   usernameBottomSpacing: 6,
-                                                   ageLocationBottomSpacing: 12,
-                                                   matchPercentBottomSpacing: 16)
+    let constraints = OKMatchSearchUserConstraintSizes(usernameTopSpacing: 16,
+                                                       usernameBottomSpacing: 6,
+                                                       ageLocationBottomSpacing: 12,
+                                                       matchPercentBottomSpacing: 16)
     
     init(user: OKUser, imageNetworkManager: OKImageNetworkManagerProtocol = OKImageNetworkManager()) {
         self.user = user

@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol OKMatchSearchRouterProtocol: class {
-    
-}
-
-final class OKMatchSearchRouter: OKRouter, OKMatchSearchRouterProtocol {
+final class OKMatchSearchRouter: OKRouter {
 
 }

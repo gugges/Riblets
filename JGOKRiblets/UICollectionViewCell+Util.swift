@@ -10,7 +10,11 @@ import UIKit
 
 extension UICollectionViewCell {
     
-    static func reuseID() -> String {
+    static var reuseID: String {
         return String(describing: self)
+    }
+    
+    static var nib: UINib {
+        return UINib(nibName: String(describing: self), bundle: nil)
     }
 }

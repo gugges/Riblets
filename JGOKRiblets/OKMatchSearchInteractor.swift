@@ -8,12 +8,6 @@
 
 import UIKit
 
-protocol OKMatchSearchInteractorProtocol: class {
-    func reloadMatches()
-    func nextPage()
-    func selected(user: OKUser)
-}
-
 final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtocol {
 
     fileprivate let matchSearchNetworkManager = OKMatchSearchNetworkManager()
@@ -29,16 +23,19 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
         
         fetchInProgress = true
         
-        matchSearchNetworkManager.getMatches { (result) in
-            switch result {
-            case .success(let users):
-                self.Presenter?.add(users: users)
+        // Fake async request
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) { [weak self] in
+            self?.matchSearchNetworkManager.getMatches { [weak self] (result) in
+                switch result {
+                case .success(let users):
+                    self?.Presenter?.add(users: users)
+                    
+                case .failure(let error):
+                    self?.Presenter?.display(error: error)
+                }
                 
-            case .failure(let error):
-                self.Presenter?.display(error: error)
+                self?.fetchInProgress = false
             }
-            
-            self.fetchInProgress = false
         }
     }
     
@@ -50,9 +47,35 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
         // Fire mParticle Stats Here
         // Create profile child router
         // Ask router to push child router
+
+        // Contrived scenarios to test alert controllers && actions
+        if user.username == "bklyn2356" {
+            Presenter?.display(alertControllerContext: reloadDataAlertControllerContext())
+            
+        } else if user.username == "strwbrryasaurus" {
+            Presenter?.display(alertControllerContext: popToRootAlertControllerContext())
+        }
         
         let matchSearchRouter = OKMatchSearchBuilder.build(components: false)
         router?.push(childRouter: matchSearchRouter, animated: true)
+    }
+    
+    //MARK: - Alert Controller Contexts
+    
+    fileprivate func reloadDataAlertControllerContext() -> OKAlertControllerContext {
+        let refreshActionContext = OKAlertActionContext(title: "Refresh!", style: .cancel) { [weak self] _ in
+            self?.Presenter?.refresh()
+        }
+        let cancelActionContext = OKAlertActionContext(title: "Cancel", style: .default, handler: nil)
+        return OKAlertControllerContext(title: "Reload all matches?", subtitle: "So fresh and so clean.", preferredStyle: .alert, actions: [refreshActionContext, cancelActionContext])
+    }
+    
+    fileprivate func popToRootAlertControllerContext() -> OKAlertControllerContext {
+        let popActionContext = OKAlertActionContext(title: "Pop, lock, and drop it.", style: .default) { [weak self] _ in
+            self?.Presenter?.viewController.ok_navigationController()?.popToRootViewController(animated: true)
+        }
+        let cancelActionContext = OKAlertActionContext(title: "Cancel", style: .default, handler: nil)
+        return OKAlertControllerContext(title: "Pop to root view controller?", subtitle: "It's poppin.", preferredStyle: .actionSheet, actions: [popActionContext, cancelActionContext])
     }
 
 }

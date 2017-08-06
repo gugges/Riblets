@@ -16,6 +16,7 @@ import UIKit
     @objc optional func viewDidDisappear()
     @objc optional func prefersStatusBarHidden() -> Bool
     @objc optional func preferredStatusBarStyle() -> UIStatusBarStyle
+    
     @objc optional func navigationButtonTapped(at index: Int)
     @objc optional func refresh()
     @objc optional func nextPage()
@@ -35,28 +36,7 @@ class OKViewController: UIViewController {
         return controllerDelegate?.preferredStatusBarStyle?() ?? .lightContent
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        controllerDelegate?.viewDidLoad?()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        controllerDelegate?.viewWillAppear?()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        controllerDelegate?.viewDidAppear?()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        controllerDelegate?.viewWillDisappear?()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        controllerDelegate?.viewDidDisappear?()
+    func animateErrorState(visible: Bool) {
+        fatalError("animateErrorState not implemented")
     }
 }

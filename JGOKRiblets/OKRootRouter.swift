@@ -23,7 +23,7 @@ final class OKRootRouter: OKRouter {
         attach(childRouter: childRouter)
         
         if let childViewController = childRouter.ViewController {
-            appDelegate.root(viewController: childViewController, animated: animated)
+            appDelegate.setRoot(viewController: childViewController, animated: animated)
         }
     }
     
