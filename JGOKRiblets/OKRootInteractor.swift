@@ -80,7 +80,7 @@ extension OKRootInteractor: OKAppDelegateHandler {
     
     func didFinishLaunching(with launchOptions: [UIApplicationLaunchOptionsKey: Any]?) {
         self.launchOptions = launchOptions
-        let path = launchOptions?[UIApplicationLaunchOptionsKey.url] as? String
+        _ = launchOptions?[UIApplicationLaunchOptionsKey.url] as? String
         
         // Setup frameworks
         // Parse launch options to capture deep link

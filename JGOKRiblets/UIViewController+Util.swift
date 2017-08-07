@@ -20,7 +20,7 @@ extension UIViewController {
     
     func ok_viewController() -> UIViewController? {
         if let navigationController = self as? OKNavigationController {
-            return navigationController.viewControllers.first
+            return navigationController.topViewController
         }
         
         return self

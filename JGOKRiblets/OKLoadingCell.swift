@@ -45,9 +45,10 @@ class OKLoadingCell: UICollectionViewCell {
         
         rotationAnimation.fromValue = 0.0
         rotationAnimation.toValue = .pi * 2.0
-        rotationAnimation.duration = 1.25
+        rotationAnimation.duration = 1.35
         rotationAnimation.repeatCount = .infinity
         rotationAnimation.isRemovedOnCompletion = false
+        rotationAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
         layer.add(rotationAnimation, forKey: "rotationAnimation")
     }

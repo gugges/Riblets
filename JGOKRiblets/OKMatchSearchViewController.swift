@@ -40,7 +40,7 @@ final class OKMatchSearchViewController: OKViewController {
         
     }
     
-    func refresh() {
+    @objc fileprivate func refresh() {
         self.controllerDelegate?.refresh?()
     }
     
@@ -48,7 +48,7 @@ final class OKMatchSearchViewController: OKViewController {
     
     fileprivate func addCollectionView() {
         view.addSubview(collectionView)
-        collectionView.pinToEdges(superView: view)
+        collectionView.pinToEdges(superview: view)
     }
     
     fileprivate func addRefreshControl() {

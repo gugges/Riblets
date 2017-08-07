@@ -51,10 +51,12 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
             
         } else if user.username == "strwbrryasaurus" {
             Presenter?.display(alertControllerContext: popToRootAlertControllerContext())
+            
+        } else {
+            let matchSearchRouter = OKMatchSearchBuilder.build(components: false)
+            router?.push(childRouter: matchSearchRouter, animated: true)
         }
         
-        let matchSearchRouter = OKMatchSearchBuilder.build(components: false)
-        router?.push(childRouter: matchSearchRouter, animated: true)
     }
     
     //MARK: - Alert Controller Contexts
@@ -69,7 +71,7 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
     
     fileprivate func popToRootAlertControllerContext() -> OKAlertControllerContext {
         let popActionContext = OKAlertActionContext(title: "Pop, lock, and drop it.", style: .default) { [weak self] _ in
-            self?.Presenter?.viewController.ok_navigationController()?.popToRootViewController(animated: true)
+            self?.Presenter?.viewController.navigationController?.popToRootViewController(animated: true)
         }
         let cancelActionContext = OKAlertActionContext(title: "Cancel", style: .default, handler: nil)
         return OKAlertControllerContext(title: "Pop to root view controller?", subtitle: "It's poppin.", preferredStyle: .actionSheet, actions: [popActionContext, cancelActionContext])

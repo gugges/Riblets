@@ -228,9 +228,9 @@
 		172F34CE1F245B0900B9A21E /* Riblet */ = {
 			isa = PBXGroup;
 			children = (
+				172F34D31F245B4800B9A21E /* OKBuilder.swift */,
 				172F34CF1F245B1E00B9A21E /* OKRouter.swift */,
 				172F34D11F245B3E00B9A21E /* OKInteractor.swift */,
-				172F34D31F245B4800B9A21E /* OKBuilder.swift */,
 				172F34D51F245B6600B9A21E /* OKPresenter.swift */,
 				172F34DC1F24628600B9A21E /* OKViewController.swift */,
 				172F35251F30266C00B9A21E /* OKNavigationController.swift */,
@@ -254,8 +254,11 @@
 		172F34E11F246D8E00B9A21E /* Match Search */ = {
 			isa = PBXGroup;
 			children = (
-				172F35141F298F8500B9A21E /* Match Search Riblet */,
+				178F80C51F36B3A1008E5304 /* Match Search Enums */,
+				178F80CC1F36B515008E5304 /* Match Search Factories */,
 				172F35151F298F9400B9A21E /* Match Search Network Manager */,
+				178E495C1F36B6BA0086EFA0 /* Match Search Protocols */,
+				172F35141F298F8500B9A21E /* Match Search Riblet */,
 				172F35171F2DA2BB00B9A21E /* Match Search Views */,
 				172F35221F3015D000B9A21E /* Match Search View Models */,
 			);
@@ -265,9 +268,9 @@
 		172F34EC1F24741100B9A21E /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				172F34ED1F24742A00B9A21E /* OKRootBuilder.swift */,
 				172F34F11F2474CA00B9A21E /* OKRootRouter.swift */,
 				172F34EF1F24744100B9A21E /* OKRootInteractor.swift */,
-				172F34ED1F24742A00B9A21E /* OKRootBuilder.swift */,
 			);
 			name = Root;
 			sourceTree = "<group>";
@@ -321,12 +324,9 @@
 		172F35141F298F8500B9A21E /* Match Search Riblet */ = {
 			isa = PBXGroup;
 			children = (
-				178F80C51F36B3A1008E5304 /* Match Search Enums */,
-				178E495C1F36B6BA0086EFA0 /* Match Search Protocols */,
-				178F80CC1F36B515008E5304 /* Match Search Factories */,
+				172F34EA1F246E3400B9A21E /* OKMatchSearchBuilder.swift */,
 				172F34E81F246E2500B9A21E /* OKMatchSearchRouter.swift */,
 				172F34E61F246E0A00B9A21E /* OKMatchSearchInteractor.swift */,
-				172F34EA1F246E3400B9A21E /* OKMatchSearchBuilder.swift */,
 				172F34E41F246DF600B9A21E /* OKMatchSearchPresenter.swift */,
 				172F34E21F246DE100B9A21E /* OKMatchSearchViewController.swift */,
 			);
