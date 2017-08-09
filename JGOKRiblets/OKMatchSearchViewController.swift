@@ -40,8 +40,8 @@ final class OKMatchSearchViewController: OKViewController {
         
     }
     
-    @objc fileprivate func refresh() {
-        self.controllerDelegate?.refresh?()
+    @objc fileprivate func reload() {
+        self.controllerDelegate?.reload?()
     }
     
     //MARK: - Setup
@@ -53,7 +53,7 @@ final class OKMatchSearchViewController: OKViewController {
     
     fileprivate func addRefreshControl() {
         collectionView.addSubview(refreshControl)
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
     }
 
 }

@@ -63,7 +63,7 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
     
     fileprivate func reloadDataAlertControllerContext() -> OKAlertControllerContext {
         let refreshActionContext = OKAlertActionContext(title: "Refresh!", style: .cancel) { [weak self] _ in
-            self?.Presenter?.refresh()
+            self?.Presenter?.reload()
         }
         let cancelActionContext = OKAlertActionContext(title: "Cancel", style: .default, handler: nil)
         return OKAlertControllerContext(title: "Reload all matches?", subtitle: "So fresh and so clean.", preferredStyle: .alert, actions: [refreshActionContext, cancelActionContext])

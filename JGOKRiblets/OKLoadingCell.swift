@@ -10,7 +10,7 @@ import UIKit
 
 class OKLoadingCell: UICollectionViewCell {
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet fileprivate weak var imageView: UIImageView!
 
     fileprivate let images = [#imageLiteral(resourceName: "avocado"),#imageLiteral(resourceName: "cat_1"),#imageLiteral(resourceName: "burger"),#imageLiteral(resourceName: "boot"),#imageLiteral(resourceName: "ugg"),#imageLiteral(resourceName: "backpack")]
     fileprivate var rotationAnimation: CABasicAnimation?

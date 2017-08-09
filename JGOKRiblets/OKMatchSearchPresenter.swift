@@ -63,7 +63,7 @@ final class OKMatchSearchPresenter: OKPresenter, OKMatchSearchPresenterProtocol 
         return matches[section]?[indexPath.item]
     }
     
-    fileprivate func refreshMatches() {
+    fileprivate func reloadMatches() {
         matches.removeAll()
         ViewController?.collectionView.reloadData()
         Interactor?.reloadMatches()
@@ -103,8 +103,8 @@ extension OKMatchSearchPresenter: OKViewControllerDelegate {
         Interactor?.reloadMatches()
     }
     
-    func refresh() {
-        refreshMatches()
+    func reload() {
+        reloadMatches()
     }
     
 }

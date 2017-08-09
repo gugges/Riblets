@@ -10,16 +10,16 @@ import UIKit
 
 final class OKMatchSearchUserCell: UICollectionViewCell {
     
-    @IBOutlet weak var profilePictureImageView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var ageLocationLabel: UILabel!
-    @IBOutlet weak var matchPercentLabel: UILabel!
-    @IBOutlet weak var labelBackgroundView: UIView!
+    @IBOutlet fileprivate weak var profilePictureImageView: UIImageView!
+    @IBOutlet fileprivate weak var usernameLabel: UILabel!
+    @IBOutlet fileprivate weak var ageLocationLabel: UILabel!
+    @IBOutlet fileprivate weak var matchPercentLabel: UILabel!
+    @IBOutlet fileprivate weak var labelBackgroundView: UIView!
     
-    @IBOutlet weak var usernameTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var usernameBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var ageLocationBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var matchPercentToBottomConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var usernameTopConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var usernameBottomConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var ageLocationBottomConstraint: NSLayoutConstraint!
+    @IBOutlet fileprivate weak var matchPercentToBottomConstraint: NSLayoutConstraint!
     
     fileprivate var imageDataTask: URLSessionDataTask?
 

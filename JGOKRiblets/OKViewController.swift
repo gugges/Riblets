@@ -19,7 +19,7 @@ import UIKit
     @objc optional func viewDidDisappear()
     
     @objc optional func navigationButtonTapped(at index: Int)
-    @objc optional func refresh()
+    @objc optional func reload()
     @objc optional func nextPage()
     @objc optional func previousPage()
 }
