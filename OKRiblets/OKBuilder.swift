@@ -12,5 +12,5 @@ protocol OKBuilder {
     associatedtype C
     associatedtype T
     
-    static func build(components: C?) -> T
+    static func build(components: C) -> T
 }

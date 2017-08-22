@@ -10,11 +10,16 @@ import UIKit
 
 final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtocol {
 
-    fileprivate let matchSearchNetworkManager = OKMatchSearchNetworkManager()
+    fileprivate let matchSearchNetworkManager: OKMatchSearchNetworkManagerProtocol
     fileprivate var fetchInProgress = false
-    fileprivate var Presenter: OKMatchSearchPresenter? { return presenter as? OKMatchSearchPresenter }
+    fileprivate var matchSearchPresenter: OKMatchSearchPresenter? { return presenter as? OKMatchSearchPresenter }
     
     //MARK: - OKMatchSearchInteractorProtocol
+
+    init(presenter: OKPresenter, networkManager: OKMatchSearchNetworkManagerProtocol) {
+        matchSearchNetworkManager = networkManager
+        super.init(presenter: presenter)
+    }
     
     func reloadMatches() {
         if fetchInProgress {
@@ -26,10 +31,10 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
         matchSearchNetworkManager.getMatches { [weak self] (result) in
             switch result {
             case .success(let users):
-                self?.Presenter?.add(users: users)
+                self?.matchSearchPresenter?.add(users: users)
                 
             case .failure(let error):
-                self?.Presenter?.display(error: error)
+                self?.matchSearchPresenter?.display(error: error)
             }
             
             self?.fetchInProgress = false
@@ -47,13 +52,13 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
 
         // Contrived scenarios to test alert controllers && actions
         if user.username == "bklyn2356" {
-            Presenter?.display(alertControllerContext: reloadDataAlertControllerContext())
+            matchSearchPresenter?.display(alertControllerContext: reloadDataAlertControllerContext())
             
         } else if user.username == "strwbrryasaurus" {
-            Presenter?.display(alertControllerContext: popToRootAlertControllerContext())
+            matchSearchPresenter?.display(alertControllerContext: popToRootAlertControllerContext())
             
         } else {
-            let matchSearchRouter = OKMatchSearchBuilder.build(components: false)
+            let matchSearchRouter = OKMatchSearchBuilder.build(components: OKMatchSearchComponents(networkManager: OKMatchSearchNetworkManager()))
             router?.push(childRouter: matchSearchRouter, animated: true)
         }
         
@@ -63,7 +68,7 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
     
     fileprivate func reloadDataAlertControllerContext() -> OKAlertControllerContext {
         let refreshActionContext = OKAlertActionContext(title: "Reload!", style: .cancel) { [weak self] _ in
-            self?.Presenter?.reload()
+            self?.matchSearchPresenter?.reload()
         }
         let cancelActionContext = OKAlertActionContext(title: "Cancel", style: .default, handler: nil)
         return OKAlertControllerContext(title: "Reload all matches?", subtitle: "So fresh and so clean.", preferredStyle: .alert, actions: [refreshActionContext, cancelActionContext])
@@ -71,7 +76,7 @@ final class OKMatchSearchInteractor: OKInteractor, OKMatchSearchInteractorProtoc
     
     fileprivate func popToRootAlertControllerContext() -> OKAlertControllerContext {
         let popActionContext = OKAlertActionContext(title: "Pop, lock, and drop it.", style: .default) { [weak self] _ in
-            self?.Presenter?.viewController.navigationController?.popToRootViewController(animated: true)
+            self?.matchSearchPresenter?.viewController.navigationController?.popToRootViewController(animated: true)
         }
         let cancelActionContext = OKAlertActionContext(title: "Cancel", style: .default, handler: nil)
         return OKAlertControllerContext(title: "Pop to root view controller?", subtitle: "It's poppin.", preferredStyle: .actionSheet, actions: [popActionContext, cancelActionContext])

@@ -10,7 +10,7 @@ import UIKit
 
 struct OKLaunchBuilder: OKBuilder {
 
-    static func build(components: Any?) -> OKRouter {
+    static func build(components: Any) -> OKRouter {
         return OKRouter(interactor: OKInteractor(presenter: OKPresenter(viewController: OKLaunchViewController())))
     }
     

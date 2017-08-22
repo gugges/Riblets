@@ -50,6 +50,9 @@
 		172F352E1F3032E400B9A21E /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172F352D1F3032E400B9A21E /* UIView+Util.swift */; };
 		173DD55F1F36460E00F50656 /* OKAlertControllerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173DD55E1F36460E00F50656 /* OKAlertControllerContext.swift */; };
 		174C29BE1F317B0B0021FD64 /* UIColor+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C29BD1F317B0A0021FD64 /* UIColor+Util.swift */; };
+		176B08D21F4BD6E3005DE080 /* OKMatchSearchComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B08D11F4BD6E3005DE080 /* OKMatchSearchComponents.swift */; };
+		176B08D41F4BD9BE005DE080 /* OKNavigationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176B08D31F4BD9BE005DE080 /* OKNavigationContext.swift */; };
+		177A47041F4BE1040029E2A3 /* OKMatchSearchNetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A47031F4BE1040029E2A3 /* OKMatchSearchNetworkManagerProtocol.swift */; };
 		178E495E1F36B6E90086EFA0 /* OKMatchSearchInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E495D1F36B6E90086EFA0 /* OKMatchSearchInteractorProtocol.swift */; };
 		178E49601F36B7210086EFA0 /* OKMatchSearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E495F1F36B7210086EFA0 /* OKMatchSearchPresenterProtocol.swift */; };
 		178E49621F36B7910086EFA0 /* OKMatchSearchSizingFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178E49611F36B7910086EFA0 /* OKMatchSearchSizingFactoryProtocol.swift */; };
@@ -62,7 +65,6 @@
 		17E3DD4F1F36DE5800D43C06 /* OKLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E3DD4D1F36DE5800D43C06 /* OKLaunchViewController.swift */; };
 		17E3DD501F36DE5800D43C06 /* OKLaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E3DD4E1F36DE5800D43C06 /* OKLaunchViewController.xib */; };
 		17F7F4F01F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7F4EF1F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift */; };
-		17F7F4F21F3615BB00A0CCEC /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F7F4F11F3615BB00A0CCEC /* UIViewController+Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,9 @@
 		172F352D1F3032E400B9A21E /* UIView+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 		173DD55E1F36460E00F50656 /* OKAlertControllerContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKAlertControllerContext.swift; sourceTree = "<group>"; };
 		174C29BD1F317B0A0021FD64 /* UIColor+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Util.swift"; sourceTree = "<group>"; };
+		176B08D11F4BD6E3005DE080 /* OKMatchSearchComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchComponents.swift; sourceTree = "<group>"; };
+		176B08D31F4BD9BE005DE080 /* OKNavigationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKNavigationContext.swift; sourceTree = "<group>"; };
+		177A47031F4BE1040029E2A3 /* OKMatchSearchNetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchNetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		178E495D1F36B6E90086EFA0 /* OKMatchSearchInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchInteractorProtocol.swift; sourceTree = "<group>"; };
 		178E495F1F36B7210086EFA0 /* OKMatchSearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchPresenterProtocol.swift; sourceTree = "<group>"; };
 		178E49611F36B7910086EFA0 /* OKMatchSearchSizingFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKMatchSearchSizingFactoryProtocol.swift; sourceTree = "<group>"; };
@@ -144,7 +149,6 @@
 		17E3DD4D1F36DE5800D43C06 /* OKLaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OKLaunchViewController.swift; sourceTree = "<group>"; };
 		17E3DD4E1F36DE5800D43C06 /* OKLaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OKLaunchViewController.xib; sourceTree = "<group>"; };
 		17F7F4EF1F32C2DE00A0CCEC /* UICollectionViewCell+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Util.swift"; sourceTree = "<group>"; };
-		17F7F4F11F3615BB00A0CCEC /* UIViewController+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +238,7 @@
 				172F34D51F245B6600B9A21E /* OKPresenter.swift */,
 				172F34DC1F24628600B9A21E /* OKViewController.swift */,
 				172F35251F30266C00B9A21E /* OKNavigationController.swift */,
+				176B08D31F4BD9BE005DE080 /* OKNavigationContext.swift */,
 			);
 			name = Riblet;
 			sourceTree = "<group>";
@@ -288,10 +293,10 @@
 		172F34F71F297ED100B9A21E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				173DD55E1F36460E00F50656 /* OKAlertControllerContext.swift */,
 				172F34FC1F297F8A00B9A21E /* OKLocation.swift */,
 				172F34FA1F297F4800B9A21E /* OKPhoto.swift */,
 				172F34F81F297F0D00B9A21E /* OKUser.swift */,
-				173DD55E1F36460E00F50656 /* OKAlertControllerContext.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				172F34E61F246E0A00B9A21E /* OKMatchSearchInteractor.swift */,
 				172F34E41F246DF600B9A21E /* OKMatchSearchPresenter.swift */,
 				172F34E21F246DE100B9A21E /* OKMatchSearchViewController.swift */,
+				176B08D11F4BD6E3005DE080 /* OKMatchSearchComponents.swift */,
 			);
 			name = "Match Search Riblet";
 			sourceTree = "<group>";
@@ -359,7 +365,6 @@
 				174C29BD1F317B0A0021FD64 /* UIColor+Util.swift */,
 				172F35201F2EECDF00B9A21E /* UIScrollView+Util.swift */,
 				172F352D1F3032E400B9A21E /* UIView+Util.swift */,
-				17F7F4F11F3615BB00A0CCEC /* UIViewController+Util.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -376,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				178E495D1F36B6E90086EFA0 /* OKMatchSearchInteractorProtocol.swift */,
+				177A47031F4BE1040029E2A3 /* OKMatchSearchNetworkManagerProtocol.swift */,
 				178E495F1F36B7210086EFA0 /* OKMatchSearchPresenterProtocol.swift */,
 				178E49611F36B7910086EFA0 /* OKMatchSearchSizingFactoryProtocol.swift */,
 			);
@@ -554,9 +560,10 @@
 				172F35091F29862A00B9A21E /* OKNetworkClient.swift in Sources */,
 				172F35241F3016D800B9A21E /* OKMatchSearchUser.swift in Sources */,
 				17E3DD4F1F36DE5800D43C06 /* OKLaunchViewController.swift in Sources */,
-				17F7F4F21F3615BB00A0CCEC /* UIViewController+Util.swift in Sources */,
 				172F35261F30266C00B9A21E /* OKNavigationController.swift in Sources */,
+				176B08D21F4BD6E3005DE080 /* OKMatchSearchComponents.swift in Sources */,
 				172F352A1F302FD500B9A21E /* OKImageNetworkManagerProtocol.swift in Sources */,
+				177A47041F4BE1040029E2A3 /* OKMatchSearchNetworkManagerProtocol.swift in Sources */,
 				172F34D41F245B4800B9A21E /* OKBuilder.swift in Sources */,
 				172F34DD1F24628600B9A21E /* OKViewController.swift in Sources */,
 				172F34FD1F297F8A00B9A21E /* OKLocation.swift in Sources */,
@@ -572,6 +579,7 @@
 				172F350F1F29873200B9A21E /* OKNetworkClientRequestMethod.swift in Sources */,
 				172F35211F2EECDF00B9A21E /* UIScrollView+Util.swift in Sources */,
 				172F34F91F297F0D00B9A21E /* OKUser.swift in Sources */,
+				176B08D41F4BD9BE005DE080 /* OKNavigationContext.swift in Sources */,
 				172F34A11F245AFF00B9A21E /* AppDelegate.swift in Sources */,
 				172F35041F29810D00B9A21E /* OKLocationParser.swift in Sources */,
 				174C29BE1F317B0B0021FD64 /* UIColor+Util.swift in Sources */,

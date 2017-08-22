@@ -11,20 +11,17 @@ import UIKit
 final class OKRootRouter: OKRouter {
     
     unowned let appDelegate: AppDelegate
-    fileprivate var Interactor: OKRootInteractor? {  return interactor as? OKRootInteractor }
+    fileprivate var rootInteractor: OKRootInteractor? {  return interactor as? OKRootInteractor }
     
     init(interactor: OKInteractor, appDelegate: AppDelegate) {
         self.appDelegate = appDelegate
         super.init(interactor: interactor)
-        self.appDelegate.appDelegateHandler = Interactor
+        self.appDelegate.appDelegateHandler = rootInteractor
     }
-    
-    override func push(childRouter: OKRouter, animated: Bool) {
-        attach(childRouter: childRouter)
-        
-        if let childViewController = childRouter.ViewController {
-            appDelegate.setRoot(viewController: childViewController, animated: animated)
-        }
+
+    override func setRoot(navigationContext: OKNavigationContext, animated: Bool) {
+        attach(childRouter: navigationContext.router)
+        appDelegate.setRoot(viewController: navigationContext.viewController, animated: animated)
     }
     
 }

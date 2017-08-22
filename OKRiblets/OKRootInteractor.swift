@@ -22,45 +22,48 @@ final class OKRootInteractor: OKInteractor {
     fileprivate func fetchBootstrap() {
         // Simulate async login after 2 seconds
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.present(state: .loggedIn)
+            self.update(state: .loggedIn)
         }
     }
     
     //MARK: - States
     
-    fileprivate func present(state: OKRootState) {
+    fileprivate func update(state: OKRootState) {
         if state == currentContext?.state {
-            print("Trying to present the current state. You ok?")
-            return
+            fatalError("Trying to update to the current root state")
         }
         
         dismissCurrentContext()
         
-        let childRouter: OKRouter
+        let navigationContext: OKNavigationContext?
         let animated: Bool
         
         switch state {
         case .launch:
-            childRouter = OKLaunchBuilder.build(components: nil)
+            navigationContext = OKNavigationContext(router: OKLaunchBuilder.build(components: 0), isNavigationController: false)
             animated = false
             
         case .loginLink:
-            childRouter = OKLaunchBuilder.build(components: nil)
+            navigationContext = OKNavigationContext(router: OKLaunchBuilder.build(components: 0), isNavigationController: false)
             animated = false
             
         case .loggedOut:
-            childRouter = OKLaunchBuilder.build(components: nil)
+            navigationContext = OKNavigationContext(router: OKLaunchBuilder.build(components: 0), isNavigationController: false)
             animated = true
             
         case .loggedIn:
-            // Pass along deep link to log in builder
-            childRouter = OKMatchSearchBuilder.build(components: nil)
+            //TODO: Pass along deep link to log in builder
+            let matchSearchComponents = OKMatchSearchComponents(networkManager: OKMatchSearchNetworkManager())
+            navigationContext = OKNavigationContext(router: OKMatchSearchBuilder.build(components: matchSearchComponents), isNavigationController: true)
             animated = true
         }
-        
-        currentContext = (state: state, router: childRouter)
-        
-        router?.push(childRouter: childRouter, animated: animated)
+
+        if let navigationContext = navigationContext {
+            currentContext = (state: state, router: navigationContext.router)
+            router?.setRoot(navigationContext: navigationContext, animated: animated)
+        } else {
+            fatalError("Cannot present nil navigationContext")
+        }
     }
     
     fileprivate func dismissCurrentContext() {
@@ -82,10 +85,10 @@ extension OKRootInteractor: OKAppDelegateHandler {
         self.launchOptions = launchOptions
         _ = launchOptions?[UIApplicationLaunchOptionsKey.url] as? String
         
-        // Setup frameworks
-        // Parse launch options to capture deep link
-        // Show appropriate loading state
-        present(state: .launch)
+        //TODO: Setup frameworks
+        //TODO: Parse launch options to capture deep link
+        //TODO: Show appropriate loading state
+        update(state: .launch)
         
         // Fetch bootstrap
         fetchBootstrap()

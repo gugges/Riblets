@@ -11,14 +11,14 @@ import UIKit
 final class OKMatchSearchPresenter: OKPresenter, OKMatchSearchPresenterProtocol {
     
     fileprivate var matches = [OKMatchSearchSection : [OKMatchSearchObject]]()
-    fileprivate var Interactor: OKMatchSearchInteractor? { return interactor as? OKMatchSearchInteractor }
-    fileprivate var ViewController: OKMatchSearchViewController? { return viewController.ok_viewController() as? OKMatchSearchViewController }
+    fileprivate var matchSearchInteractor: OKMatchSearchInteractor? { return interactor as? OKMatchSearchInteractor }
+    fileprivate var matchSearchViewController: OKMatchSearchViewController? { return viewController as? OKMatchSearchViewController }
     fileprivate let sizingFactory: OKMatchSearchSizingFactoryProtocol
     
     init(viewController: UIViewController, sizingFactory: OKMatchSearchSizingFactoryProtocol = OKMatchSearchSizingFactory()) {
         self.sizingFactory = sizingFactory
         super.init(viewController: viewController)
-        ViewController?.controllerDelegate = self
+        matchSearchViewController?.controllerDelegate = self
     }
     
     //MARK: - OKMatchSearchPresenterProtocol
@@ -41,9 +41,9 @@ final class OKMatchSearchPresenter: OKPresenter, OKMatchSearchPresenterProtocol 
         matches[.loading] = currentLoading
         matches[.user] = currentUsers
         
-        self.ViewController?.refreshControl.endRefreshing()
-        self.ViewController?.collectionView.performBatchUpdates({ [weak self] in
-            self?.ViewController?.collectionView.insertItems(at: indexPaths)
+        self.matchSearchViewController?.refreshControl.endRefreshing()
+        self.matchSearchViewController?.collectionView.performBatchUpdates({ [weak self] in
+            self?.matchSearchViewController?.collectionView.insertItems(at: indexPaths)
         }, completion: nil)
     }
     
@@ -65,26 +65,26 @@ final class OKMatchSearchPresenter: OKPresenter, OKMatchSearchPresenterProtocol 
     
     fileprivate func reloadMatches() {
         matches.removeAll()
-        ViewController?.collectionView.reloadData()
-        Interactor?.reloadMatches()
+        matchSearchViewController?.collectionView.reloadData()
+        matchSearchInteractor?.reloadMatches()
     }
     
     //MARK: - Setup
     
     fileprivate func setupViewController() {
-        ViewController?.view.backgroundColor = .colorGray7()
-        ViewController?.navigationController?.navigationBar.clipsToBounds = false
-        ViewController?.navigationController?.navigationBar.isTranslucent = false
-        ViewController?.navigationController?.navigationBar.barTintColor = .colorBlue3()
-        ViewController?.navigationController?.navigationBar.tintColor = .white
+        matchSearchViewController?.view.backgroundColor = .colorGray7()
+        matchSearchViewController?.navigationController?.navigationBar.clipsToBounds = false
+        matchSearchViewController?.navigationController?.navigationBar.isTranslucent = false
+        matchSearchViewController?.navigationController?.navigationBar.barTintColor = .colorBlue3()
+        matchSearchViewController?.navigationController?.navigationBar.tintColor = .white
     }
     
     fileprivate func setupCollectionView() {
-        ViewController?.collectionView.register(OKLoadingCell.nib, forCellWithReuseIdentifier: OKLoadingCell.reuseID)
-        ViewController?.collectionView.register(OKMatchSearchUserCell.nib, forCellWithReuseIdentifier: OKMatchSearchUserCell.reuseID)
-        ViewController?.collectionView.dataSource = self
-        ViewController?.collectionView.delegate = self
-        ViewController?.collectionView.backgroundColor = .clear
+        matchSearchViewController?.collectionView.register(OKLoadingCell.nib, forCellWithReuseIdentifier: OKLoadingCell.reuseID)
+        matchSearchViewController?.collectionView.register(OKMatchSearchUserCell.nib, forCellWithReuseIdentifier: OKMatchSearchUserCell.reuseID)
+        matchSearchViewController?.collectionView.dataSource = self
+        matchSearchViewController?.collectionView.delegate = self
+        matchSearchViewController?.collectionView.backgroundColor = .clear
     }
     
 }
@@ -100,7 +100,7 @@ extension OKMatchSearchPresenter: OKViewControllerDelegate {
     func viewDidLoad() {
         setupViewController()
         setupCollectionView()
-        Interactor?.reloadMatches()
+        matchSearchInteractor?.reloadMatches()
     }
     
     func reload() {
@@ -146,7 +146,7 @@ extension OKMatchSearchPresenter: UICollectionViewDelegateFlowLayout {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.pagesRemaining() == 0 {
-            Interactor?.nextPage()
+            matchSearchInteractor?.nextPage()
         }
     }
     
@@ -160,7 +160,7 @@ extension OKMatchSearchPresenter: UICollectionViewDelegateFlowLayout {
             break
             
         case .user(let matchUser):
-            Interactor?.selected(user: matchUser.user)
+            matchSearchInteractor?.selected(user: matchUser.user)
         }
     }
     

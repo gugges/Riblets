@@ -20,8 +20,8 @@ protocol OKRouterProtocol: class {
 class OKRouter: NSObject, OKRouterProtocol {
     
     let interactor: OKInteractor
-    var ViewController: UIViewController? { return interactor.presenter?.viewController }
-    
+    weak var viewController: UIViewController? { return interactor.presenter?.viewController }
+    weak var navigationController: UINavigationController? { return viewController?.navigationController }
     weak var parent: OKRouter?
     lazy var childRouters = Set<OKRouter>()
     
@@ -29,6 +29,7 @@ class OKRouter: NSObject, OKRouterProtocol {
     
     init(interactor: OKInteractor) {
         self.interactor = interactor
+
         super.init()
         self.interactor.router = self
     }
@@ -50,13 +51,13 @@ class OKRouter: NSObject, OKRouterProtocol {
     
     func dismiss(childRouter: OKRouter) {
         let childRouter = detach(childRouter: childRouter)
-        childRouter?.ViewController?.dismiss(animated: true, completion: nil)
+        childRouter?.viewController?.dismiss(animated: true, completion: nil)
     }
     
     func present(childRouter: OKRouter, animated: Bool) {
-        if let childViewController = childRouter.ViewController {
+        if let childViewController = childRouter.viewController {
             attach(childRouter: childRouter)
-            ViewController?.present(childViewController, animated: true, completion: nil)
+            viewController?.present(childViewController, animated: true, completion: nil)
             
         } else {
             fatalError("Cannot present child router without viewController")
@@ -64,17 +65,20 @@ class OKRouter: NSObject, OKRouterProtocol {
     }
     
     func push(childRouter: OKRouter, animated: Bool) {
-        guard let childViewController = childRouter.ViewController else {
+        guard let childViewController = childRouter.viewController else {
             fatalError("Cannot push child router without viewController")
         }
-        
-        if let navigationController = ViewController?.ok_navigationController() {
-            attach(childRouter: childRouter)
-            navigationController.pushViewController(childViewController, animated: true)
-            
-        } else {
+
+        guard let navigationController = navigationController else {
             fatalError("Cannot push child router without navigationController")
         }
+
+        attach(childRouter: childRouter)
+        navigationController.pushViewController(childViewController, animated: true)
     }
-    
+
+
+    func setRoot(navigationContext: OKNavigationContext, animated: Bool) {
+        fatalError("setRoot(navigationRouter:) not implemented")
+    }
 }
